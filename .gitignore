@@ -1,2 +1,5 @@
 # Folder config file
 [Dd]esktop.ini
+
+# Jetbains
+.idea
