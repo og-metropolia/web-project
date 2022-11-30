@@ -5,7 +5,6 @@ btn.addEventListener('click', async (event) => {
   let searchInput = searchField.value;
   // console.log(searchInput);
 
-
   let addressPlus = toPlusNotation(searchInput);
   console.log(`addressPlus: ${addressPlus}`);
 
@@ -19,24 +18,20 @@ btn.addEventListener('click', async (event) => {
   const hqLng = '24.816348085940856';
 
   try {
-    console.log(`Input coords: ${addressCoords[0]} | ${addressCoords[1]} | ${hqLat} | ${hqLng}`);
-    let data = await getData(
-      addressCoords[0],
-      addressCoords[1],
-      hqLat,
-      hqLng
+    console.log(
+      `Input coords: ${addressCoords[0]} | ${addressCoords[1]} | ${hqLat} | ${hqLng}`
     );
-    
-    // let distance = await getDistance(data);
-    // let duration = await getDuration(data);
+    let data = await getData(addressCoords[0], addressCoords[1], hqLat, hqLng);
 
+    let distance = await getDistance(data);
+    let duration = await getDuration(data);
 
+    console.log(`distance: ${distance}`);
+    console.log(`duration: ${duration}`);
   } catch (error) {
     console.log(error.message);
   }
 });
-
- 
 
 const getData = async (oLat, oLng, dLat, dLng) => {
   const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
@@ -44,6 +39,8 @@ const getData = async (oLat, oLng, dLat, dLng) => {
   const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
     MAPS_URL
   )}`;
+
+  console.log(`url to use: ${QUERY_URL}`);
   const response = await fetch(QUERY_URL);
   const json = await response.json();
   return json;
@@ -87,7 +84,6 @@ function getCoords(json) {
   ];
 }
 
-
 function validateCoords(lat, lon) {
   const regexLat = /^(-?[1-8]?\d(?:\.\d{1,18})?|90(?:\.0{1,18})?)$/;
   const regexLon = /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)$/;
@@ -95,7 +91,6 @@ function validateCoords(lat, lon) {
   let validLon = regexLon.test(lon);
   return validLat && validLon;
 }
-
 
 // try {
 //   const outData = await getData(
