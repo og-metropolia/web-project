@@ -1,26 +1,39 @@
 const btn = document.querySelector('#input-button');
 
 btn.addEventListener('click', async (event) => {
-  const searchField = document.querySelector('#input-address');
-  let searchInput = searchField.value;
+  const sourceSearchField = document.querySelector('#input-address');
+  let sourceSearchInput = sourceSearchField.value;
+  
+  let sourceAddressPlus = toPlusNotation(sourceSearchInput);
+  console.log(`sourceAddressPlus: ${sourceAddressPlus}`);
+  let sourceAddressCoordsJson = await toCoords(sourceAddressPlus);
+  console.log(`sourceAddressCoordsJson: ${sourceAddressCoordsJson}`);
+  let sourceAddressCoords = getCoords(sourceAddressCoordsJson);
+  console.log(`sourceAddressCoords: ${sourceAddressCoords}`);
+  
+  const destinationSearchField = document.querySelector('#output-address');
+  let destinationSearchInput = destinationSearchField.value;
 
-  let addressPlus = toPlusNotation(searchInput);
-  console.log(`addressPlus: ${addressPlus}`);
+  let destinationAddressPlus = toPlusNotation(destinationSearchInput);
+  console.log(`destinationAddressPlus: ${destinationAddressPlus}`);
+  let destinationAddressCoordsJson = await toCoords(destinationAddressPlus);
+  console.log(`destinationAddressCoordsJson: ${destinationAddressCoordsJson}`);
+  let destinationAddressCoords = getCoords(destinationAddressCoordsJson);
+  console.log(`destinationAddressCoords: ${destinationAddressCoords}`);
 
-  let addressCoordsJson = await toCoords(addressPlus);
-  console.log(`addressCoordsJson: ${addressCoordsJson}`);
-
-  let addressCoords = getCoords(addressCoordsJson);
-  console.log(`addressCoords: ${addressCoords}`);
-
-  const hqLat = '60.235874355209376';
-  const hqLng = '24.816348085940856';
+  // const hqLat = '60.235874355209376';
+  // const hqLng = '24.816348085940856';
 
   try {
     console.log(
-      `Input coords: ${addressCoords[0]} | ${addressCoords[1]} | ${hqLat} | ${hqLng}`
+      `Input coords: ${sourceAddressCoords[0]} | ${sourceAddressCoords[1]} | ${destinationAddressCoords[0]} | ${destinationAddressCoords[1]}`
     );
-    let data = await getData(addressCoords[0], addressCoords[1], hqLat, hqLng);
+    let data = await getData(
+      sourceAddressCoords[0],
+      sourceAddressCoords[1],
+      destinationAddressCoords[0],
+      destinationAddressCoords[1]
+    );
 
     let distance = await getDistance(data);
     let duration = await getDuration(data);
@@ -97,8 +110,8 @@ function showValues(distance, duration) {
   const paraElem1 = document.createElement('p');
   const paraElem2 = document.createElement('p');
 
-  paraElem1.innerHTML = `Matka toimipaikallemme: ${distance} m`;
-  paraElem2.innerHTML = `Kesto toimipaikallemme: ${duration} s`;
+  paraElem1.innerHTML = `Matka pisteiden välillä: ${distance} m`;
+  paraElem2.innerHTML = `Matkaan kuluva aika pisteiden välillä: ${duration} s`;
 
   bodyElem.appendChild(paraElem1);
   bodyElem.appendChild(paraElem2);

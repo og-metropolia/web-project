@@ -11,13 +11,19 @@
     <script type="module" src="js/script.js"></script>
   </head>
   <body>
-    
+    <input type="text" required title="title" id="input-address" />
+    <input type="text" required title="title" id="output-address" />
+
     <button type="button" id="input-button">Hae</button>
-    <input type="text" required title="test" id="input-address" />
+
     <script>
       function initAutocomplete() {
         new google.maps.places.Autocomplete(
           document.getElementById('input-address'),
+          { types: ['geocode'] }
+        );
+        new google.maps.places.Autocomplete(
+          document.getElementById('output-address'),
           { types: ['geocode'] }
         );
       }
