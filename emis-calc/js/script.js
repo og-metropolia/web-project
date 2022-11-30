@@ -73,14 +73,16 @@ function getCoords(json) {
   // console.log(JSON.parse(json.contents));
   // console.log(JSON.parse(json.contents).results[0].geometry.bounds.northeast);
 
-  let lat = JSON.parse(json.contents).results[0].geometry.bounds.northeast.lat;
-  let lng = JSON.parse(json.contents).results[0].geometry.bounds.northeast.lng;
+  // console.log(JSON.parse(json.contents).results[0]);
+
+  let lat = JSON.parse(json.contents).results[0].geometry.location.lat;
+  let lng = JSON.parse(json.contents).results[0].geometry.location.lng;
   console.log(`lat: ${lat}`);
   console.log(`lng: ${lng}`);
 
   return [
-    JSON.parse(json.contents).results[0].geometry.bounds.northeast.lat,
-    JSON.parse(json.contents).results[0].geometry.bounds.northeast.lng,
+    JSON.parse(json.contents).results[0].geometry.location.lat,
+    JSON.parse(json.contents).results[0].geometry.location.lng,
   ];
 }
 
