@@ -3,7 +3,6 @@ const btn = document.querySelector('#input-button');
 btn.addEventListener('click', async (event) => {
   const searchField = document.querySelector('#input-address');
   let searchInput = searchField.value;
-  // console.log(searchInput);
 
   let addressPlus = toPlusNotation(searchInput);
   console.log(`addressPlus: ${addressPlus}`);
@@ -70,11 +69,6 @@ const toCoords = async (address) => {
 };
 
 function getCoords(json) {
-  // console.log(JSON.parse(json.contents));
-  // console.log(JSON.parse(json.contents).results[0].geometry.bounds.northeast);
-
-  // console.log(JSON.parse(json.contents).results[0]);
-
   let lat = JSON.parse(json.contents).results[0].geometry.location.lat;
   let lng = JSON.parse(json.contents).results[0].geometry.location.lng;
   console.log(`lat: ${lat}`);
@@ -93,16 +87,3 @@ function validateCoords(lat, lon) {
   let validLon = regexLon.test(lon);
   return validLat && validLon;
 }
-
-// try {
-//   const outData = await getData(
-//     '60.235874355209376',
-//     '24.816348085940856',
-//     '60.22420883178711',
-//     '24.756818771362305'
-//   );
-//   console.log(getDistance(outData));
-//   console.log(getDuration(outData));
-// } catch (error) {
-//   console.log(error.message);
-// }
