@@ -10,5 +10,22 @@
     <script type="text/javascript" src="/js/global.js"></script>
     <script type="module" src="js/script.js"></script>
   </head>
-  <body></body>
+  <body>
+    
+    <button type="button" id="input-button">Hae</button>
+    <input type="text" required title="test" id="input-address" />
+    <script>
+      function initAutocomplete() {
+        new google.maps.places.Autocomplete(
+          document.getElementById('input-address'),
+          { types: ['geocode'] }
+        );
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+  </body>
 </html>
