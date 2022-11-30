@@ -1,32 +1,85 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
+*{
+    font-family: 'Anton', sans-serif;
+    color: #38b6ff;
+
 }
 
-li {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav ul {
+    list-style-type: none;
+    margin: -8px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #D1F5FF;
+    display: block;
+    width: 1270px;
+}
+
+.nav li {
     float: left;
 }
 
-li a {
+.nav li a {
     display: block;
-    color: white;
     text-align: center;
-    padding: 35px 16px;
+    padding: 55px 130px;
     text-decoration: none;
-    color: #38b6ff;
     font-size: x-large;
-    font-family: 'Anton', sans-serif;
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.nav li a:hover {
     text-decoration: underline;
-    text-decoration-color: #38b6ff;
 }
 
 #logo{
     width: 150px;
+}
+
+.etusivunkuva img{
+    object-fit: fill;
+    width: 100%;
+    height: auto;
+}
+
+.teksti {
+
+    text-align: center;
+    font-size: large;
+    font-family: 'Anton', sans-serif;
+    background: #D1F5FF;
+    padding: 40px;
+    margin-top: -5px;
+}
+
+.ekareferenssi {
+    position: relative;
+    padding-left: 20px;
+    text-align: center;
+    right: 350px;
+}
+.tokareferenssi {
+    position: relative;
+    left: 300px;
+    bottom: 460px;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.ekareferenssi img {
+    width: 350px;
+    position: center;
+    height: 300px;
+}
+
+.tokareferenssi img {
+    width: 350px;
+    position: center;
+    height: 300px;
+
 }
