@@ -27,6 +27,9 @@ btn.addEventListener('click', async (event) => {
 
     console.log(`distance: ${distance}`);
     console.log(`duration: ${duration}`);
+    showValues(distance, duration)
+
+
   } catch (error) {
     console.log(error.message);
   }
@@ -86,4 +89,17 @@ function validateCoords(lat, lon) {
   let validLat = regexLat.test(lat);
   let validLon = regexLon.test(lon);
   return validLat && validLon;
+}
+
+function showValues(distance, duration) {
+  const bodyElem = document.querySelector('body');
+
+  const paraElem1 = document.createElement('p');
+  const paraElem2 = document.createElement('p');
+
+  paraElem1.innerHTML = `Matka toimipaikallemme: ${distance} m`;
+  paraElem2.innerHTML = `Kesto toimipaikallemme: ${duration} s`;
+
+  bodyElem.appendChild(paraElem1);
+  bodyElem.appendChild(paraElem2);
 }
