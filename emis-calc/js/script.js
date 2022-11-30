@@ -2,27 +2,25 @@ const btn = document.querySelector('#input-button');
 
 btn.addEventListener('click', async (event) => {
   const sourceSearchField = document.querySelector('#input-address');
+  const destinationSearchField = document.querySelector('#output-address');
+
   let sourceSearchInput = sourceSearchField.value;
+  let destinationSearchInput = destinationSearchField.value;
   
   let sourceAddressPlus = toPlusNotation(sourceSearchInput);
   console.log(`sourceAddressPlus: ${sourceAddressPlus}`);
-  let sourceAddressCoordsJson = await toCoords(sourceAddressPlus);
-  console.log(`sourceAddressCoordsJson: ${sourceAddressCoordsJson}`);
-  let sourceAddressCoords = getCoords(sourceAddressCoordsJson);
-  console.log(`sourceAddressCoords: ${sourceAddressCoords}`);
-  
-  const destinationSearchField = document.querySelector('#output-address');
-  let destinationSearchInput = destinationSearchField.value;
-
   let destinationAddressPlus = toPlusNotation(destinationSearchInput);
   console.log(`destinationAddressPlus: ${destinationAddressPlus}`);
+
+  let sourceAddressCoordsJson = await toCoords(sourceAddressPlus);
+  console.log(`sourceAddressCoordsJson: ${sourceAddressCoordsJson}`);
   let destinationAddressCoordsJson = await toCoords(destinationAddressPlus);
   console.log(`destinationAddressCoordsJson: ${destinationAddressCoordsJson}`);
+
   let destinationAddressCoords = getCoords(destinationAddressCoordsJson);
   console.log(`destinationAddressCoords: ${destinationAddressCoords}`);
-
-  // const hqLat = '60.235874355209376';
-  // const hqLng = '24.816348085940856';
+  let sourceAddressCoords = getCoords(sourceAddressCoordsJson);
+  console.log(`sourceAddressCoords: ${sourceAddressCoords}`);
 
   try {
     console.log(
