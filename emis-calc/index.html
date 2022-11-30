@@ -10,6 +10,7 @@
     <script type="text/javascript" src="/js/global.js"></script>
     <script type="module" src="js/script.js"></script>
   </head>
+
   <body>
     <input type="text" required title="title" id="input-address" />
     <input type="text" required title="title" id="output-address" />
@@ -20,11 +21,11 @@
       function initAutocomplete() {
         new google.maps.places.Autocomplete(
           document.getElementById('input-address'),
-          { types: ['geocode'] }
+          { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
         );
         new google.maps.places.Autocomplete(
           document.getElementById('output-address'),
-          { types: ['geocode'] }
+          { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
         );
       }
     </script>
