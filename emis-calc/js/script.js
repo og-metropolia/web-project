@@ -1,14 +1,15 @@
-let originLatitude = '60.235874355209376';
-let originLongitude = '24.816348085940856';
-let destinationLatitude = '60.22420883178711';
-let destinationLongitude = '24.756818771362305';
+// let originLatitude = '60.235874355209376';
+// let originLatitude = '24.816348085940856';
+// let destinationLatitude = '60.22420883178711';
+// let destinationLongitude = '24.756818771362305';
 
-const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
-const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originLatitude}%2C${originLongitude}&destinations=${destinationLatitude}%2C${destinationLongitude}&key=${API_KEY}`;
-const SEARCH_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(MAPS_URL)}`;
-
-const getData = async (url) => {
-  const response = await fetch(url);
+const getData = async (oLat, oLng, dLat, dLng) => {
+  const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
+  const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${oLat}%2C${oLng}&destinations=${dLat}%2C${dLng}&key=${API_KEY}`;
+  const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
+    MAPS_URL
+  )}`;
+  const response = await fetch(QUERY_URL);
   const json = await response.json();
   return json;
 };
@@ -23,7 +24,12 @@ function getDuration(data) {
 }
 
 try {
-  const outData = await getData(SEARCH_URL);
+  const outData = await getData(
+    '60.235874355209376',
+    '24.816348085940856',
+    '60.22420883178711',
+    '24.756818771362305'
+  );
   console.log(getDistance(outData));
   console.log(getDuration(outData));
 } catch (error) {
