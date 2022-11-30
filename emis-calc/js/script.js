@@ -1,8 +1,8 @@
-const btn = document.querySelector('#input-button');
+const btn = document.querySelector('#search-button');
 
 btn.addEventListener('click', async (event) => {
-  const sourceSearchField = document.querySelector('#input-address');
-  const destinationSearchField = document.querySelector('#output-address');
+  const sourceSearchField = document.querySelector('#source-address');
+  const destinationSearchField = document.querySelector('#destination-address');
 
   let sourceSearchInput = sourceSearchField.value;
   let destinationSearchInput = destinationSearchField.value;

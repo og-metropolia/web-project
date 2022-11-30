@@ -12,19 +12,19 @@
   </head>
 
   <body>
-    <input type="text" required title="title" id="input-address" />
-    <input type="text" required title="title" id="output-address" />
+    <input type="text" required title="title" id="source-address" />
+    <input type="text" required title="title" id="destination-address" />
 
-    <button type="button" id="input-button">Hae</button>
+    <button type="button" id="search-button">Hae</button>
 
     <script>
       function initAutocomplete() {
         new google.maps.places.Autocomplete(
-          document.getElementById('input-address'),
+          document.getElementById('source-address'),
           { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
         );
         new google.maps.places.Autocomplete(
-          document.getElementById('output-address'),
+          document.getElementById('destination-address'),
           { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
         );
       }
