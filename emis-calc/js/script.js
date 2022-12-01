@@ -3,9 +3,13 @@ const btn = document.querySelector('#search-button');
 btn.addEventListener('click', async (event) => {
   const sourceSearchField = document.querySelector('#source-address');
   const destinationSearchField = document.querySelector('#destination-address');
+  const packageWeightField = document.querySelector('#package-weight');
 
   let sourceSearchInput = sourceSearchField.value;
   let destinationSearchInput = destinationSearchField.value;
+  let packageWeightInput = packageWeightField.value;
+
+  console.log(`packageWeightInput: ${packageWeightInput} grams`);
   
   let sourceAddressPlus = toPlusNotation(sourceSearchInput);
   console.log(`sourceAddressPlus: ${sourceAddressPlus}`);
@@ -36,9 +40,13 @@ btn.addEventListener('click', async (event) => {
     let distance = await getDistance(data);
     let duration = await getDuration(data);
 
+    let emissions = calculateEmissions(distance, packageWeightInput);
+
     console.log(`distance: ${distance}`);
     console.log(`duration: ${duration}`);
-    showValues(distance, duration)
+    console.log(`emissions: ${emissions}`);
+
+    showValues(distance, duration, emissions);
 
 
   } catch (error) {
@@ -69,6 +77,12 @@ function getDuration(data) {
 
 function toPlusNotation(text) {
   return text.replaceAll(' ', '+');
+}
+
+function calculateEmissions(distanceMeters, weightGrams) {
+  const CO2_PER_METER = 6.473684210526316 * 10**(-5);
+  return distanceMeters * CO2_PER_METER;
+
 }
 
 const toCoords = async (address) => {
@@ -102,15 +116,18 @@ function validateCoords(lat, lon) {
   return validLat && validLon;
 }
 
-function showValues(distance, duration) {
+function showValues(distance, duration, emissions) {
   const bodyElem = document.querySelector('body');
 
   const paraElem1 = document.createElement('p');
   const paraElem2 = document.createElement('p');
+  const paraElem3 = document.createElement('p');
 
   paraElem1.innerHTML = `Matka pisteiden välillä: ${distance} metriä`;
   paraElem2.innerHTML = `Matkaan kuluva aika pisteiden välillä: ${duration} sekuntia`;
+  paraElem3.innerHTML = `Päästöt: ${emissions} co2`;
 
   bodyElem.appendChild(paraElem1);
   bodyElem.appendChild(paraElem2);
+  bodyElem.appendChild(paraElem3);
 }
