@@ -1,12 +1,11 @@
 .nav ul {
   list-style-type: none;
-  padding: 0;
   overflow: hidden;
   background-color: #d1f5ff;
   display: block;
-  width: auto;
-  margin: auto;
   flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .nav li {

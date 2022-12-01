@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    max-width: 100%;
+    width: 100%;
 
 }
 
@@ -25,19 +25,19 @@ body {
     margin-top: -6px;
 }
 
-.ekareferenssi {
-    position: relative;
-    padding-left: 20px;
-    text-align: center;
-    right: 350px;
+.wrapper {
+    width: 100%;
+    overflow: hidden;
 }
-.tokareferenssi {
-    position: relative;
-    left: 300px;
-    bottom: 460px;
-    margin-left: auto;
+.ekareferenssi {
+    width: 610px;
+    float:left;
     text-align: center;
 
+}
+.tokareferenssi {
+    float: left;
+    text-align: center;
 }
 
 .ekareferenssi img {
