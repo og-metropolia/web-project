@@ -80,7 +80,7 @@ function toPlusNotation(text) {
 }
 
 function calculateEmissions(distanceMeters, weightKilograms) {
-  const CO2_PER_METER = 6.473684210526316 * 10**(-8);
+  const CO2_PER_METER = 6.5 * 10**(-8);
   return distanceMeters * CO2_PER_METER * weightKilograms;
 
 }
