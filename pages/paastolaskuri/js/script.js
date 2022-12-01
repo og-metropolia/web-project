@@ -127,9 +127,9 @@ function showValues(distance, duration, emissions) {
   const paraElem2 = document.createElement('li');
   const paraElem3 = document.createElement('li');
 
-  paraElem1.innerHTML = `Matka: ${distance} m`;
-  paraElem2.innerHTML = `Aika: ${duration} s`;
-  paraElem3.innerHTML = `Päästöt: ${emissions.toFixed(2)} CO₂`;
+  paraElem1.innerHTML = `Matka: ${distance} m`;
+  paraElem2.innerHTML = `Aika: ${duration} s`;
+  paraElem3.innerHTML = `Päästöt: ${emissions.toFixed(2)} CO₂`;
 
   bodyElem.appendChild(paraElem1);
   bodyElem.appendChild(paraElem2);
