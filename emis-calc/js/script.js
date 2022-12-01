@@ -108,8 +108,8 @@ function showValues(distance, duration) {
   const paraElem1 = document.createElement('p');
   const paraElem2 = document.createElement('p');
 
-  paraElem1.innerHTML = `Matka pisteiden välillä: ${distance} m`;
-  paraElem2.innerHTML = `Matkaan kuluva aika pisteiden välillä: ${duration} s`;
+  paraElem1.innerHTML = `Matka pisteiden välillä: ${distance} metriä`;
+  paraElem2.innerHTML = `Matkaan kuluva aika pisteiden välillä: ${duration} sekuntia`;
 
   bodyElem.appendChild(paraElem1);
   bodyElem.appendChild(paraElem2);
