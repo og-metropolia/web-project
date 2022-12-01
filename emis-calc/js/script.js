@@ -10,7 +10,7 @@ btn.addEventListener('click', async (event) => {
   let packageWeightInput = packageWeightField.value;
 
   console.log(`packageWeightInput: ${packageWeightInput} kilograms`);
-  
+
   let sourceAddressPlus = toPlusNotation(sourceSearchInput);
   console.log(`sourceAddressPlus: ${sourceAddressPlus}`);
   let destinationAddressPlus = toPlusNotation(destinationSearchInput);
@@ -40,6 +40,13 @@ btn.addEventListener('click', async (event) => {
     let distance = await getDistance(data);
     let duration = await getDuration(data);
 
+    drawMap(
+      sourceAddressCoords[0],
+      sourceAddressCoords[1],
+      destinationAddressCoords[0],
+      destinationAddressCoords[1]
+    );
+
     let emissions = calculateEmissions(distance, packageWeightInput);
 
     console.log(`distance: ${distance}`);
@@ -47,8 +54,6 @@ btn.addEventListener('click', async (event) => {
     console.log(`emissions: ${emissions}`);
 
     showValues(distance, duration, emissions);
-
-
   } catch (error) {
     console.log(error.message);
   }
@@ -80,9 +85,8 @@ function toPlusNotation(text) {
 }
 
 function calculateEmissions(distanceMeters, weightKilograms) {
-  const CO2_PER_METER = 6.5 * 10**(-8);
+  const CO2_PER_METER = 6.5 * 10 ** -8;
   return distanceMeters * CO2_PER_METER * weightKilograms;
-
 }
 
 const toCoords = async (address) => {
@@ -130,4 +134,67 @@ function showValues(distance, duration, emissions) {
   bodyElem.appendChild(paraElem1);
   bodyElem.appendChild(paraElem2);
   bodyElem.appendChild(paraElem3);
+}
+
+
+
+function drawMap(originLat, originLng, destLat, destLng) {
+  var pointA = new google.maps.LatLng(originLat, originLng);
+  var pointB = new google.maps.LatLng(destLat, destLng),
+    myOptions = {
+      zoom: 7,
+      center: pointA,
+    },
+
+
+    map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+    // Instantiate a directions service.
+    directionsService = new google.maps.DirectionsService(),
+    directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map,
+    }),
+    markerA = new google.maps.Marker({
+      position: pointA,
+      title: 'point A',
+      label: 'A',
+      map: map,
+    }),
+    markerB = new google.maps.Marker({
+      position: pointB,
+      title: 'point B',
+      label: 'B',
+      map: map,
+    });
+
+  // get route from A to B
+  calculateAndDisplayRoute(
+    directionsService,
+    directionsDisplay,
+    pointA,
+    pointB
+  );
+}
+
+function calculateAndDisplayRoute(
+  directionsService,
+  directionsDisplay,
+  pointA,
+  pointB
+) {
+  directionsService.route(
+    {
+      origin: pointA,
+      destination: pointB,
+      avoidTolls: true,
+      avoidHighways: false,
+      travelMode: google.maps.TravelMode.DRIVING,
+    },
+    function (response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    }
+  );
 }
