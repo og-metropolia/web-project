@@ -121,7 +121,7 @@ function validateCoords(lat, lon) {
 }
 
 function showValues(distance, duration, emissions) {
-  const bodyElem = document.querySelector('body');
+  const bodyElem = document.querySelector('#output');
 
   const paraElem1 = document.createElement('p');
   const paraElem2 = document.createElement('p');
@@ -147,7 +147,7 @@ function drawMap(originLat, originLng, destLat, destLng) {
     },
 
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+    map = new google.maps.Map(document.querySelector('#map-canvas'), myOptions),
     // Instantiate a directions service.
     directionsService = new google.maps.DirectionsService(),
     directionsDisplay = new google.maps.DirectionsRenderer({

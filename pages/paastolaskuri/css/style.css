@@ -4,7 +4,49 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* aside {
+  display: block;
+  width: 30%;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+  float: left;
+} */
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 10%;
+  margin-top: 1em;
+}
+
+.flexbox > * {
+  flex: 1 1 100%;
+  /* margin: 1em; */
+  margin-bottom: 1em;
+  margin-left: 1em;
+  height: 2em;
+}
+
+#inputs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+}
 #map-canvas {
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 75%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 300px;
+  right: 0;
+  bottom: 0;
+}
+
+#search-button {
+  width: 10em;
 }
