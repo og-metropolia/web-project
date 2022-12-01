@@ -1,0 +1,50 @@
+* {
+  font-family: 'Anton', sans-serif;
+  color: #38b6ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.etusivunkuva img {
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+}
+
+.teksti {
+  text-align: center;
+  font-size: large;
+  background: #d1f5ff;
+  padding: 40px;
+  margin-top: -6px;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.ekareferenssi {
+  width: 610px;
+  float: left;
+  text-align: center;
+}
+.tokareferenssi {
+  float: left;
+  text-align: center;
+}
+
+.ekareferenssi img {
+  width: 350px;
+  position: center;
+  height: 300px;
+}
+
+.tokareferenssi img {
+  width: 350px;
+  position: center;
+  height: 300px;
+}
