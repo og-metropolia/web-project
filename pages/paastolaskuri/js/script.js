@@ -120,6 +120,14 @@ function validateCoords(lat, lon) {
   return validLat && validLon;
 }
 
+function toKilometers(meters) {
+  return meters / 1000;
+}
+
+function toHours(seconds) {
+  return seconds / 3600;
+}
+
 function showValues(distance, duration, emissions) {
   const bodyElem = document.querySelector('#output');
 
@@ -127,8 +135,8 @@ function showValues(distance, duration, emissions) {
   const paraElem2 = document.createElement('li');
   const paraElem3 = document.createElement('li');
 
-  paraElem1.innerHTML = `Matka: ${distance} m`;
-  paraElem2.innerHTML = `Aika: ${duration} s`;
+  paraElem1.innerHTML = `Matka: ${toKilometers(distance).toFixed(2)} km`;
+  paraElem2.innerHTML = `Aika: ${toHours(duration).toFixed(2)} h`;
   paraElem3.innerHTML = `Päästöt: ${emissions.toFixed(2)} CO₂`;
 
   bodyElem.appendChild(paraElem1);
