@@ -1,11 +1,11 @@
 .nav ul {
   list-style-type: none;
-  overflow: hidden;
+  justify-content: space-between;
   background-color: #d1f5ff;
-  display: block;
-  flex-wrap: wrap;
-  margin-top: 0;
-  margin-bottom: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-content: center;
 }
 
 .nav li {
@@ -15,7 +15,7 @@
 .nav li a {
   display: block;
   text-align: center;
-  padding: 55px 80px;
+  padding: 4rem;
   text-decoration: none;
   font-size: x-large;
   font-family: 'Anton', sans-serif;

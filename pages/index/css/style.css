@@ -1,6 +1,7 @@
 * {
   font-family: 'Anton', sans-serif;
   color: #38b6ff;
+  box-sizing: border-box;
 }
 
 body {
@@ -26,9 +27,10 @@ body {
 .wrapper {
   width: 100%;
   overflow: hidden;
+  display: flex;
 }
 .ekareferenssi {
-  width: 610px;
+  width: 700px;
   float: left;
   text-align: center;
 }
