@@ -9,7 +9,7 @@ btn.addEventListener('click', async (event) => {
   let destinationSearchInput = destinationSearchField.value;
   let packageWeightInput = packageWeightField.value;
 
-  console.log(`packageWeightInput: ${packageWeightInput} grams`);
+  console.log(`packageWeightInput: ${packageWeightInput} kilograms`);
   
   let sourceAddressPlus = toPlusNotation(sourceSearchInput);
   console.log(`sourceAddressPlus: ${sourceAddressPlus}`);
@@ -79,9 +79,9 @@ function toPlusNotation(text) {
   return text.replaceAll(' ', '+');
 }
 
-function calculateEmissions(distanceMeters, weightGrams) {
-  const CO2_PER_METER = 6.473684210526316 * 10**(-5);
-  return distanceMeters * CO2_PER_METER;
+function calculateEmissions(distanceMeters, weightKilograms) {
+  const CO2_PER_METER = 6.473684210526316 * 10**(-8);
+  return distanceMeters * CO2_PER_METER * weightKilograms;
 
 }
 
