@@ -136,8 +136,6 @@ function showValues(distance, duration, emissions) {
   bodyElem.appendChild(paraElem3);
 }
 
-
-
 function drawMap(originLat, originLng, destLat, destLng) {
   var pointA = new google.maps.LatLng(originLat, originLng);
   var pointB = new google.maps.LatLng(destLat, destLng),
@@ -145,8 +143,6 @@ function drawMap(originLat, originLng, destLat, destLng) {
       zoom: 7,
       center: pointA,
     },
-
-
     map = new google.maps.Map(document.querySelector('#map-canvas'), myOptions),
     // Instantiate a directions service.
     directionsService = new google.maps.DirectionsService(),
