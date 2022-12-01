@@ -1,3 +1,7 @@
+html {
+  padding: 10px;
+}
+
 .nav ul {
   list-style-type: none;
   padding: 0;
@@ -14,6 +18,8 @@
 }
 
 .nav li a {
+  font-family: 'Anton', sans-serif;
+  color: #38b6ff;
   display: block;
   text-align: center;
   padding: 55px 80px;
