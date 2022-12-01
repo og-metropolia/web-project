@@ -1,0 +1,32 @@
+.nav ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #d1f5ff;
+  display: block;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  text-align: center;
+  padding: 55px 80px;
+  text-decoration: none;
+  font-size: x-large;
+  font-family: 'Anton', sans-serif;
+  color: #38b6ff;
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+#logo {
+  width: 150px;
+}
