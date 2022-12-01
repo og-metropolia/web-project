@@ -1,6 +1,8 @@
 body {
     color: black;
     font-family: 'Titillium Web', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 .container img {
@@ -33,7 +35,3 @@ body {
     color: #fff;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-}
