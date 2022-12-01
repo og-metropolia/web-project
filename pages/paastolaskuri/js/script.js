@@ -123,13 +123,13 @@ function validateCoords(lat, lon) {
 function showValues(distance, duration, emissions) {
   const bodyElem = document.querySelector('#output');
 
-  const paraElem1 = document.createElement('p');
-  const paraElem2 = document.createElement('p');
-  const paraElem3 = document.createElement('p');
+  const paraElem1 = document.createElement('li');
+  const paraElem2 = document.createElement('li');
+  const paraElem3 = document.createElement('li');
 
-  paraElem1.innerHTML = `Matka pisteiden välillä: ${distance} metriä`;
-  paraElem2.innerHTML = `Matkaan kuluva aika pisteiden välillä: ${duration} sekuntia`;
-  paraElem3.innerHTML = `Päästöt: ${emissions} co2`;
+  paraElem1.innerHTML = `Matka: ${distance} m`;
+  paraElem2.innerHTML = `Aika: ${duration} s`;
+  paraElem3.innerHTML = `Päästöt: ${emissions.toFixed(2)} co2`;
 
   bodyElem.appendChild(paraElem1);
   bodyElem.appendChild(paraElem2);
