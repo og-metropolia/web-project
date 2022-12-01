@@ -4,13 +4,12 @@ html {
 
 .nav ul {
   list-style-type: none;
-  padding: 0;
-  overflow: hidden;
+  justify-content: space-between;
   background-color: #d1f5ff;
-  display: block;
-  width: auto;
-  margin: auto;
-  flex-wrap: wrap;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-content: center;
 }
 
 .nav li {
@@ -22,9 +21,11 @@ html {
   color: #38b6ff;
   display: block;
   text-align: center;
-  padding: 55px 80px;
+  padding: 4rem;
   text-decoration: none;
   font-size: x-large;
+  font-family: 'Anton', sans-serif;
+  color: #38b6ff;
 }
 
 /* Change the link color to #111 (black) on hover */

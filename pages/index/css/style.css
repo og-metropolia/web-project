@@ -1,54 +1,52 @@
-*{
-    font-family: 'Anton', sans-serif;
-    color: #38b6ff;
+* {
+  font-family: 'Anton', sans-serif;
+  color: #38b6ff;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.etusivunkuva img{
-    object-fit: fill;
-    width: 100%;
-    height: auto;
+.etusivunkuva img {
+  object-fit: fill;
+  width: 100%;
+  height: auto;
 }
 
 .teksti {
-
-    text-align: center;
-    font-size: large;
-    background: #D1F5FF;
-    padding: 40px;
-    margin-top: -6px;
+  text-align: center;
+  font-size: large;
+  background: #d1f5ff;
+  padding: 40px;
+  margin-top: -6px;
 }
 
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
 .ekareferenssi {
-    position: relative;
-    padding-left: 20px;
-    text-align: center;
-    right: 350px;
+  width: 700px;
+  float: left;
+  text-align: center;
 }
 .tokareferenssi {
-    position: relative;
-    left: 300px;
-    bottom: 460px;
-    margin-left: auto;
-    text-align: center;
-
+  float: left;
+  text-align: center;
 }
 
 .ekareferenssi img {
-    width: 350px;
-    position: center;
-    height: 300px;
+  width: 350px;
+  position: center;
+  height: 300px;
 }
 
 .tokareferenssi img {
-    width: 350px;
-    position: center;
-    height: 300px;
-
+  width: 350px;
+  position: center;
+  height: 300px;
 }
