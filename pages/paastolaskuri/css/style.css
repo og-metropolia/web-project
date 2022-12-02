@@ -31,7 +31,7 @@ body {
 
 #inputs {
   position: absolute;
-  top: 0;
+  top: 10em;
   left: 0;
   bottom: 0;
   width: 300px;
@@ -41,7 +41,7 @@ body {
   width: 75%;
   display: inline-block;
   position: absolute;
-  top: 0;
+  top: 10em;
   left: 300px;
   right: 0;
   bottom: 0;
