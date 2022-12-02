@@ -5,15 +5,6 @@ body {
   padding: 0;
 }
 
-/* aside {
-  display: block;
-  width: 30%;
-  float: right;
-  font-style: italic;
-  background-color: lightgray;
-  float: left;
-} */
-
 .flexbox {
   display: flex;
   flex-wrap: wrap;
