@@ -129,19 +129,44 @@ function toHours(seconds) {
 }
 
 function showValues(distance, duration, emissions) {
-  const bodyElem = document.querySelector('#output');
+  const outputList = document.querySelector('#output');
 
-  const paraElem1 = document.createElement('li');
-  const paraElem2 = document.createElement('li');
-  const paraElem3 = document.createElement('li');
+  if (document.querySelector('#distance-output')) {
+    const distanceOutputElem = document.querySelector('#distance-output');
+    distanceOutputElem.innerHTML = `Matka: ${toKilometers(distance).toFixed(
+      2
+    )} km`;
+    outputList.appendChild(distanceOutputElem);
+  } else {
+    const distanceOutputElem = document.createElement('li');
+    distanceOutputElem.setAttribute('id', 'distance-output');
+    distanceOutputElem.innerHTML = `Matka: ${toKilometers(distance).toFixed(
+      2
+    )} km`;
+    outputList.appendChild(distanceOutputElem);
+  }
 
-  paraElem1.innerHTML = `Matka: ${toKilometers(distance).toFixed(2)} km`;
-  paraElem2.innerHTML = `Aika: ${toHours(duration).toFixed(2)} h`;
-  paraElem3.innerHTML = `Päästöt: ${emissions.toFixed(2)} CO₂`;
+  if (document.querySelector('#duration-output')) {
+    const durationOutputElem = document.querySelector('#duration-output');
+    durationOutputElem.innerHTML = `Kesto: ${toHours(duration).toFixed(2)} h`;
+    outputList.appendChild(durationOutputElem);
+  } else {
+    const durationOutputElem = document.createElement('li');
+    durationOutputElem.setAttribute('id', 'duration-output');
+    durationOutputElem.innerHTML = `Kesto: ${toHours(duration).toFixed(2)} h`;
+    outputList.appendChild(durationOutputElem);
+  }
 
-  bodyElem.appendChild(paraElem1);
-  bodyElem.appendChild(paraElem2);
-  bodyElem.appendChild(paraElem3);
+  if (document.querySelector('#emission-output')) {
+    const emissionOutputElem = document.querySelector('#emission-output');
+    emissionOutputElem.innerHTML = `Päästöt: ${emissions.toFixed(2)} kg CO₂e`;
+    outputList.appendChild(emissionOutputElem);
+  } else {
+    const emissionOutputElem = document.createElement('li');
+    emissionOutputElem.setAttribute('id', 'emission-output');
+    emissionOutputElem.innerHTML = `Päästöt: ${emissions.toFixed(2)} kg CO₂e`;
+    outputList.appendChild(emissionOutputElem);
+  }
 }
 
 function drawMap(originLat, originLng, destLat, destLng) {
