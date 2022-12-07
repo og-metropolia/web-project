@@ -1,3 +1,5 @@
+const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
+
 const btn = document.querySelector('#search-button');
 
 btn.addEventListener('click', async (event) => {
@@ -60,7 +62,6 @@ btn.addEventListener('click', async (event) => {
 });
 
 const getData = async (oLat, oLng, dLat, dLng) => {
-  const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
   const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${oLat}%2C${oLng}&destinations=${dLat}%2C${dLng}&key=${API_KEY}`;
   const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
     MAPS_URL
@@ -90,7 +91,6 @@ function calculateEmissions(distanceMeters, weightKilograms) {
 }
 
 const toCoords = async (address) => {
-  const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
   const MAPS_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${API_KEY}`;
   const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
     MAPS_URL
