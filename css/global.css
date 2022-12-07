@@ -24,8 +24,7 @@ html {
   padding: 4rem;
   text-decoration: none;
   font-size: x-large;
-  font-family: 'Anton', sans-serif;
-  color: #38b6ff;
+
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -36,3 +35,22 @@ html {
 #logo {
   width: 150px;
 }
+.footer {
+  padding-top: 40px;
+  background-color: #d1f5ff;
+  color: #38b6ff;
+}
+.flex-parent-element {
+  display: flex;
+  width: 170%;
+}
+
+.flex-child-element {
+  flex: 1;
+  margin: 50px;
+}
+
+.flex-child-element:first-child {
+  margin-right: 80px;
+}
+
