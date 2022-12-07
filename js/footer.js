@@ -19,4 +19,3 @@ document.write(`
     </div>
 </div>
 `);
-
