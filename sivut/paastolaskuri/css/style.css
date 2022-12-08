@@ -1,0 +1,42 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 10%;
+  margin-top: 1em;
+}
+
+.flexbox > * {
+  flex: 1 1 100%;
+  /* margin: 1em; */
+  margin-bottom: 1em;
+  margin-left: 1em;
+  height: 2em;
+}
+
+#inputs {
+  position: absolute;
+  top: 10em;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+}
+#map-canvas {
+  max-height: 50em;
+  width: 75%;
+  display: inline-block;
+  position: absolute;
+  top: 9.7em;
+  right: 0;
+  bottom: 0;
+}
+
+#search-button {
+  width: 10em;
+}

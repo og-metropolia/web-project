@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Päästölaskuri | OG Logistic Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+      <div id="map-canvas">
+          <!-- <img src="../../img/" alt=""> -->
+    </div>
+    <div id="inputs">
+        <div class="flexbox">
+            <input
+          type="text"
+          required
+          title="title"
+          placeholder="Lähtöpaikka"
+          id="source-address"
+          />
+        <input
+          type="text"
+          required
+          title="title"
+          placeholder="Päämäärä"
+          id="destination-address"
+          />
+          <input
+          type="number"
+          required
+          title="title"
+          placeholder="Kuljetuksen paino (kg)"
+          id="package-weight"
+          />
+          <button type="button" id="search-button">Hae</button>
+          <ul id="output">
+      </ul>
+    </div>
+
+    <script>
+      function initAutocomplete() {
+        new google.maps.places.Autocomplete(
+          document.getElementById('source-address'),
+          { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+        );
+        new google.maps.places.Autocomplete(
+          document.getElementById('destination-address'),
+          { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+        );
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+  </body>
+</html>
