@@ -63,9 +63,8 @@ btn.addEventListener('click', async (event) => {
 
 const getData = async (oLat, oLng, dLat, dLng) => {
   const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${oLat}%2C${oLng}&destinations=${dLat}%2C${dLng}&key=${API_KEY}`;
-  const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
-    MAPS_URL
-  )}`;
+  const ENCODED_URL = encodeURIComponent(MAPS_URL);
+  const QUERY_URL = toCorsSave(ENCODED_URL);
 
   console.log(`url to use: ${QUERY_URL}`);
   const response = await fetch(QUERY_URL);
@@ -92,9 +91,9 @@ function calculateEmissions(distanceMeters, weightKilograms) {
 
 const toCoords = async (address) => {
   const MAPS_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${API_KEY}`;
-  const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
-    MAPS_URL
-  )}`;
+  const ENCODED_URL = encodeURIComponent(MAPS_URL);
+  const QUERY_URL = toCorsSave(ENCODED_URL)
+
   const response = await fetch(QUERY_URL);
   const json = await response.json();
   return json;
@@ -226,4 +225,9 @@ function calculateAndDisplayRoute(
       }
     }
   );
+}
+
+function toCorsSave(url) {
+  const PROXY_URL = 'https://api.allorigins.win/get?url=';
+  return `${PROXY_URL}${url}`;
 }
