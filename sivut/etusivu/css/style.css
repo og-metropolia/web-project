@@ -14,28 +14,31 @@ body {
   object-fit: fill;
   width: 100%;
   height: auto;
+  margin-top: 10px;
+
 }
 
 .teksti {
   text-align: center;
   font-size: large;
-  background: #d1f5ff;
   padding: 40px;
-  margin-top: -6px;
+  margin-top: 10px;
+  color: #333333;
 }
 
 .wrapper {
   width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
   overflow: hidden;
   display: flex;
 }
 .ekareferenssi {
-  width: 700px;
-  float: left;
+  width: 500px;
   text-align: center;
 }
 .tokareferenssi {
-  float: left;
+  width: 500px;
   text-align: center;
 }
 
