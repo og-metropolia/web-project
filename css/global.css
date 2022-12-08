@@ -5,7 +5,7 @@ html {
 .nav ul {
   list-style-type: none;
   justify-content: space-between;
-  background-color: #d1f5ff;
+  background-color: #333;
   display: flex;
   margin: 0;
   padding: 0;
@@ -24,9 +24,7 @@ html {
   padding: 4rem;
   text-decoration: none;
   font-size: x-large;
-
 }
-
 /* Change the link color to #111 (black) on hover */
 .nav li a:hover {
   text-decoration: underline;
@@ -34,23 +32,62 @@ html {
 
 #logo {
   width: 150px;
+  padding-left: 70px;
 }
-.footer {
-  padding-top: 40px;
-  background-color: #d1f5ff;
-  color: #38b6ff;
-}
-.flex-parent-element {
+
+/* Footer for every page */
+
+.footer{
+  margin-top: 150px;
+  padding: 100px 15%;
+  background: #333;
+  color: #efefef;
   display: flex;
-  width: 170%;
 }
-
-.flex-child-element {
-  flex: 1;
-  margin: 50px;
+.footer div{
+  text-align: center;
 }
-
-.flex-child-element:first-child {
-  margin-right: 80px;
+.col-2{
+  flex-grow: 2;
 }
-
+.footer div h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+.col-1 a{
+  display: block;
+  text-decoration: none;
+  color: #efefef;
+  margin-bottom: 10px;
+}
+form input{
+  width: 300px;
+  height: 45px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  outline: none;
+  border: none;
+}
+form button{
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #efefef;
+}
+.social-icons{
+  margin-top: 30px;
+}
+.social-icons i{
+  font-size: 22px;
+  margin: 10px;
+  cursor: pointer;
+}
+#footermail{
+  color: #fff;
+}
