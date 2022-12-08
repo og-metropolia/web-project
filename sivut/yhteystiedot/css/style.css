@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -17,17 +22,28 @@ body {
 .teksti{
     color: black;
     font-family: 'Titillium Web', sans-serif;
-    padding-top: 50px;
+    padding-top: 250px;
     padding-left: 100px;
     padding-right: 100px;
-    font-size: large;
+    font-size: x-large;
     text-align: center;
+}
+
+.teksti2{
+    font-family: 'Titillium Web', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+    padding-top: 2300px;
+    color: black;
 }
 
 .konttori img{
     width: 50%;
-    height: 500px;
-    padding-top: 50px;
+    height: 700px;
+    padding-top: 230px;
     float: left;
 }
 
@@ -99,5 +115,12 @@ input[type=submit]:hover {
     margin: auto;
     width: 60%;
     display: flex;
-    flex-width: wrap;
+}
+
+#map {
+    height: 100%;
+    width: 50%;
+    height: 700px;
+    padding-top: 50px;
+    float: left;
 }
