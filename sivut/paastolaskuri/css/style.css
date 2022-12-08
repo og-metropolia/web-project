@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+main {
+    margin-bottom: 300px;
+}
+
 .flexbox {
   display: flex;
   flex-wrap: wrap;
