@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script type="text/javascript" src="../../js/global.js"></script>
+  <script type="module" src="js/script.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -13,29 +15,22 @@
           href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
           rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+        rel="stylesheet"
+/>
+
 </head>
 <body>
 
-<nav class="nav">
-  <ul>
-    <li><img id="logo" src="../../img/logo.png" alt="kuva"></li>
-    <li><a href="../../index.html">ETUSIVU</a></li>
-    <li><a href="pages/yhteystiedot.html">YHTEYSTIEDOT</a></li>
-    <li><a href="/pages/about-us/index.html">MEISTÄ</a></li>
-    <li><a href="pages/paastolaskuri.html">PÄÄSTÖLASKURI</a></li>
-  </ul>
-</nav>
-
 <div class="container">
-  <img src="/img/background.jpg" alt="kuvas">
+  <img src="/img/yläbanneri.png" alt="kuvas">
   <div class = 'otsikko'>
     <h1>Yhteystiedot</h1>
   </div>
 </div>
 
-<div class="konttori">
-<img src="/img/konttori.jpg" alt="kuvas">
-</div>
+<div id="map"></div>
 
 <div class="teksti clearfix">
   <p>OG Logistic Services</p>
@@ -43,12 +38,19 @@
   <p>02600 Espoo</p>
   <p>Y-tunnus 2330662-6</p>
 
-  <p>Tilauskeskus</p>
-  <p>09 720 65200</p>
-  <p>ma-pe 7.30–19.00</p>
-  <p>info@oglogistic.fi</p>
-
 </div>
+
+<div class="konttori">
+  <img src="/img/konttori.jpg" alt="kuvas">
+  <div class="teksti2 clearfix">
+    <p>Tilauskeskus</p>
+    <p>09 720 65200</p>
+    <p>ma-pe 7.30–19.00</p>
+    <p>info@oglogistic.fi</p>
+  </div>
+</div>
+
+
 
 <div class="valiotsikko clearfix">
 <h1>Haluan, että minuun otetaan yhteyttä.</h1>
@@ -94,28 +96,10 @@
 </div>
 
 
-<div class="footer" >
-  <footer>
-    <div class="flex-parent-element">
-      <div class="flex-child-element magenta">
-        <p>OG Logistic Services<br>
-        <p>Leppävaarankatu 11 C<br>
-        <p>02600 Espoo<br>
-        <p>Y-tunnus 2330662-6<br>
-      </div>
-      <div class="flex-child-element green">
-        <p>Tilauskeskus<br>
-        <p>09 720 65200<br>
-        <p>ma-pe 7.30–19.00<br>
-        <p>info@oglogistic.fi<br>
-      </div>
-    </div>
-
-
-  </footer>
-
-</div>
-
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&callback=initMap"
+        defer
+></script>
 
 </body>
 </html>
