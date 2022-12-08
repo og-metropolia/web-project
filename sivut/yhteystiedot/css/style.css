@@ -12,39 +12,50 @@ body {
     object-fit: fill;
     width: 100%;
     height: 300px;
-    padding-top: 50px;
+    margin-top: 10px;
 }
 .container{
     position: relative;
     text-align: center;
     color: white;
 }
+
+.parent {
+    display: flex;
+
+}
+
+.parent2 {
+    display: flex;
+}
+
+.konttorikuva img{
+    width: 100%;
+
+}
+
+.konttorikuva {
+    width: 50%;
+}
+
+
 .teksti{
     color: black;
     font-family: 'Titillium Web', sans-serif;
-    padding-top: 250px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 150px;
     font-size: x-large;
     text-align: center;
+    width: 50%;
 }
 
 .teksti2{
     font-family: 'Titillium Web', sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
     font-size: x-large;
-    padding-top: 2300px;
     color: black;
-}
-
-.konttori img{
+    text-align: center;
     width: 50%;
-    height: 700px;
-    padding-top: 230px;
-    float: left;
+    padding-top: 70px;
+
 }
 
 .clearfix {
@@ -118,9 +129,7 @@ input[type=submit]:hover {
 }
 
 #map {
-    height: 100%;
     width: 50%;
-    height: 700px;
+    height: 500px;
     padding-top: 50px;
-    float: left;
 }
