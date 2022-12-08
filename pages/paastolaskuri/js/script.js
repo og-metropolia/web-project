@@ -63,8 +63,11 @@ btn.addEventListener('click', async (event) => {
 
 const getData = async (oLat, oLng, dLat, dLng) => {
   const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${oLat}%2C${oLng}&destinations=${dLat}%2C${dLng}&key=${API_KEY}`;
+  console.log(`MAPS_URL: ${MAPS_URL}`);
   const ENCODED_URL = encodeURIComponent(MAPS_URL);
+  console.log(`ENCODED_URL: ${ENCODED_URL}`);
   const QUERY_URL = toCorsSave(ENCODED_URL);
+  console.log(`QUERY_URL: ${QUERY_URL}`);
 
   console.log(`url to use: ${QUERY_URL}`);
   const response = await fetch(QUERY_URL);
@@ -91,8 +94,11 @@ function calculateEmissions(distanceMeters, weightKilograms) {
 
 const toCoords = async (address) => {
   const MAPS_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${API_KEY}`;
+  console.log(`MAPS_URL: ${MAPS_URL}`);
   const ENCODED_URL = encodeURIComponent(MAPS_URL);
+  console.log(`ENCODED_URL: ${ENCODED_URL}`);
   const QUERY_URL = toCorsSave(ENCODED_URL)
+  console.log(`QUERY_URL: ${QUERY_URL}`);
 
   const response = await fetch(QUERY_URL);
   const json = await response.json();
@@ -229,5 +235,7 @@ function calculateAndDisplayRoute(
 
 function toCorsSave(url) {
   const PROXY_URL = 'https://api.allorigins.win/get?url=';
+  // const PROXY_URL = 'https://cors-proxy.htmldriven.com/?url=';
+  // const PROXY_URL = 'https://gobetween.oklabs.org/';
   return `${PROXY_URL}${url}`;
 }
