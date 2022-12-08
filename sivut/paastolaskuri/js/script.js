@@ -76,11 +76,11 @@ const getData = async (oLat, oLng, dLat, dLng) => {
 };
 
 function getDistance(data) {
-  return JSON.parse(data.contents).rows[0].elements[0].distance.value; // returns in meters
+  return data.rows[0].elements[0].distance.value; // returns in meters
 }
 
 function getDuration(data) {
-  return JSON.parse(data.contents).rows[0].elements[0].duration.value; // returns in seconds
+  return data.rows[0].elements[0].duration.value; // returns in seconds
 }
 
 function toPlusNotation(text) {
@@ -97,7 +97,7 @@ const toCoords = async (address) => {
   console.log(`MAPS_URL: ${MAPS_URL}`);
   const ENCODED_URL = encodeURIComponent(MAPS_URL);
   console.log(`ENCODED_URL: ${ENCODED_URL}`);
-  const QUERY_URL = toCorsSave(ENCODED_URL)
+  const QUERY_URL = toCorsSave(ENCODED_URL);
   console.log(`QUERY_URL: ${QUERY_URL}`);
 
   const response = await fetch(QUERY_URL);
