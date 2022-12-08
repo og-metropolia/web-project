@@ -106,15 +106,12 @@ const toCoords = async (address) => {
 };
 
 function getCoords(json) {
-  let lat = JSON.parse(json.contents).results[0].geometry.location.lat;
-  let lng = JSON.parse(json.contents).results[0].geometry.location.lng;
+  let lat = json.results[0].geometry.location.lat;
+  let lng = json.results[0].geometry.location.lng;
   console.log(`lat: ${lat}`);
   console.log(`lng: ${lng}`);
 
-  return [
-    JSON.parse(json.contents).results[0].geometry.location.lat,
-    JSON.parse(json.contents).results[0].geometry.location.lng,
-  ];
+  return [lat, lng];
 }
 
 function validateCoords(lat, lon) {
@@ -234,8 +231,9 @@ function calculateAndDisplayRoute(
 }
 
 function toCorsSave(url) {
-  const PROXY_URL = 'https://api.allorigins.win/get?url=';
+  // const PROXY_URL = 'https://api.allorigins.win/get?url=';
   // const PROXY_URL = 'https://cors-proxy.htmldriven.com/?url=';
   // const PROXY_URL = 'https://gobetween.oklabs.org/';
-  return `${PROXY_URL}${url}`;
+  const PROXY_URL = 'https://users.metropolia.fi/~ilkkamtk/proxy.php?url=';
+  return PROXY_URL + url;
 }
