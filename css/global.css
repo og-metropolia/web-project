@@ -2,6 +2,8 @@ html {
   padding: 10px;
 }
 
+/* Global navbar */
+
 .nav ul {
   list-style-type: none;
   justify-content: space-between;
@@ -25,7 +27,7 @@ html {
   text-decoration: none;
   font-size: x-large;
 }
-/* Change the link color to #111 (black) on hover */
+
 .nav li a:hover {
   text-decoration: underline;
 }
