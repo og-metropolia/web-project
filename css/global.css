@@ -8,20 +8,17 @@ html {
   background-color: #333;
   display: flex;
   margin: 0;
-  padding: 0;
-  align-content: center;
+  padding: 20px;
+  align-items: center;
 }
 
-.nav li {
-  float: left;
-}
+
 
 .nav li a {
   font-family: 'Anton', sans-serif;
   color: #38b6ff;
   display: block;
   text-align: center;
-  padding: 4rem;
   text-decoration: none;
   font-size: x-large;
 }
@@ -31,8 +28,8 @@ html {
 }
 
 #logo {
-  width: 150px;
-  padding-left: 70px;
+  height: 100px;
+  padding-left: 20px;
 }
 
 /* Footer for every page */
