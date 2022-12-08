@@ -1,121 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MEISTÄ</title>
-  <link rel="stylesheet" href="/css/global.css" />
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link
-          href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-          rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<nav class="nav">
-  <ul>
-    <li><img id="logo" src="../../img/logo.png" alt="kuva"></li>
-    <li><a href="../../index.html">ETUSIVU</a></li>
-    <li><a href="pages/yhteystiedot.html">YHTEYSTIEDOT</a></li>
-    <li><a href="/pages/about-us/index.html">MEISTÄ</a></li>
-    <li><a href="pages/paastolaskuri.html">PÄÄSTÖLASKURI</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-  <img src="/img/background.jpg" alt="kuvas">
-  <div class = 'otsikko'>
-    <h1>Yhteystiedot</h1>
-  </div>
-</div>
-
-<div class="konttori">
-<img src="/img/konttori.jpg" alt="kuvas">
-</div>
-
-<div class="teksti clearfix">
-  <p>OG Logistic Services</p>
-  <p>Leppävaarankatu 11 C</p>
-  <p>02600 Espoo</p>
-  <p>Y-tunnus 2330662-6</p>
-
-  <p>Tilauskeskus</p>
-  <p>09 720 65200</p>
-  <p>ma-pe 7.30–19.00</p>
-  <p>info@oglogistic.fi</p>
-
-</div>
-
-<div class="valiotsikko clearfix">
-<h1>Haluan, että minuun otetaan yhteyttä.</h1>
-</div>
-
-
-<div class="flexbox">
-<div class="cont">
-
-
-
-  <form action="action_page.php">
-
-    <label for="fname"></label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Etunimei">
-
-    <label for="lname"></label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Sukunimi">
-
-    <label for="sposti"></label><br>
-    <input type="text" id="sposti" name="lastname" placeholder="Sähköpostiosoite">
-
-    <label for="ytunnus"></label><br>
-    <input type="text" id="ytunnus" name="yrityksentunnus" placeholder="Y-tunnus">
-
-    <label for="country"></label><br>
-    <select id="country" name="country">
-      <option value="helsinki">Helsinki</option>
-      <option value="espoo">Espoo</option>
-      <option value="vantaa">Vantaa</option>
-      <option value="tuusula">Tuusula</option>
-      <option value="kirkkonummi">Kirkkonummi</option>
-      <option value="kerava">Kerava</option>
-    </select>
-
-    <label for="subject"></label><br>
-    <textarea id="subject" name="subject" placeholder="Kuljetustarpeesi" style="height:100px"></textarea>
-
-    <input type="submit" value="Lähetä">
-
-  </form>
-</div>
-</div>
-
-
-<div class="footer" >
-  <footer>
-    <div class="flex-parent-element">
-      <div class="flex-child-element magenta">
-        <p>OG Logistic Services<br>
-        <p>Leppävaarankatu 11 C<br>
-        <p>02600 Espoo<br>
-        <p>Y-tunnus 2330662-6<br>
-      </div>
-      <div class="flex-child-element green">
-        <p>Tilauskeskus<br>
-        <p>09 720 65200<br>
-        <p>ma-pe 7.30–19.00<br>
-        <p>info@oglogistic.fi<br>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MEISTÄ | OG Logistic Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img src="/img/yläbanneri.png" alt="kuvas" />
+      <div class="otsikko">
+        <h1>Yhteystiedot</h1>
       </div>
     </div>
 
+    <div id="map"></div>
 
-  </footer>
+    <div class="teksti clearfix">
+      <p>OG Logistic Services</p>
+      <p>Leppävaarankatu 11 C</p>
+      <p>02600 Espoo</p>
+      <p>Y-tunnus 2330662-6</p>
+    </div>
 
-</div>
+    <div class="konttori">
+      <img src="/img/konttori.jpg" alt="kuvas" />
+      <div class="teksti2 clearfix">
+        <p>Tilauskeskus</p>
+        <p>09 720 65200</p>
+        <p>ma-pe 7.30–19.00</p>
+        <p>info@oglogistic.fi</p>
+      </div>
+    </div>
 
+    <div class="valiotsikko clearfix">
+      <h1>Haluan, että minuun otetaan yhteyttä.</h1>
+    </div>
 
-</body>
+    <div class="flexbox">
+      <div class="cont">
+        <form action="action_page.php">
+          <label for="fname"></label><br />
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Etunimei"
+          />
+
+          <label for="lname"></label><br />
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="Sukunimi"
+          />
+
+          <label for="sposti"></label><br />
+          <input
+            type="text"
+            id="sposti"
+            name="lastname"
+            placeholder="Sähköpostiosoite"
+          />
+
+          <label for="ytunnus"></label><br />
+          <input
+            type="text"
+            id="ytunnus"
+            name="yrityksentunnus"
+            placeholder="Y-tunnus"
+          />
+
+          <label for="country"></label><br />
+          <select id="country" name="country">
+            <option value="helsinki">Helsinki</option>
+            <option value="espoo">Espoo</option>
+            <option value="vantaa">Vantaa</option>
+            <option value="tuusula">Tuusula</option>
+            <option value="kirkkonummi">Kirkkonummi</option>
+            <option value="kerava">Kerava</option>
+          </select>
+
+          <label for="subject"></label><br />
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Kuljetustarpeesi"
+            style="height: 100px"
+          ></textarea>
+
+          <input type="submit" value="Lähetä" />
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&callback=initMap"
+      defer
+    ></script>
+  </body>
 </html>
