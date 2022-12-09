@@ -120,7 +120,6 @@ input[type=submit]:hover {
     padding: 20px;
     margin: auto;
     width: 60%;
-    display: flex;
 }
 
 #map {
