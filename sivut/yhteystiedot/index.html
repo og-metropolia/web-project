@@ -18,12 +18,14 @@
   </head>
   <body>
     <div class="container">
-      <img src="/img/yläbanneri.png" alt="kuvas" />
+      <img src="../../img/ylabanneri.png" alt="kuvas" />
+
       <div class="otsikko">
         <h1>Yhteystiedot</h1>
       </div>
     </div>
 
+    <div class="parent">
     <div id="map"></div>
 
     <div class="teksti clearfix">
@@ -32,15 +34,23 @@
       <p>02600 Espoo</p>
       <p>Y-tunnus 2330662-6</p>
     </div>
+    </div>
 
-    <div class="konttori">
-      <img src="/img/konttori.jpg" alt="kuvas" />
+
+    <div class="parent2">
+
       <div class="teksti2 clearfix">
         <p>Tilauskeskus</p>
         <p>09 720 65200</p>
         <p>ma-pe 7.30–19.00</p>
         <p>info@oglogistic.fi</p>
       </div>
+
+      <div class="konttorikuva">
+      <img src="../../img/konttori.jpg" alt="kuvas" />
+      </div>
+
+
     </div>
 
     <div class="valiotsikko clearfix">
@@ -49,13 +59,15 @@
 
     <div class="flexbox">
       <div class="cont">
-        <form action="action_page.php">
-          <label for="fname"></label><br />
+
+        <!--<form action="action_page.php">-->
+
+          <label for="fname"></label><br/>
           <input
             type="text"
             id="fname"
             name="firstname"
-            placeholder="Etunimei"
+            placeholder="Etunimi"
           />
 
           <label for="lname"></label><br />
