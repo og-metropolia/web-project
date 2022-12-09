@@ -2,7 +2,7 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
-main{
+main {
   margin: 20px;
 }
 
@@ -37,17 +37,17 @@ main{
 
 /* Footer for every page */
 
-.footer{
+.footer {
   padding: 10px 15%;
   margin-top: 75px;
   background: #333;
   color: #efefef;
   display: flex;
 }
-.footer div{
+.footer div {
   text-align: center;
 }
-.col-2{
+.col-2 {
   flex-grow: 2;
 }
 .footer div h3 {
@@ -55,13 +55,13 @@ main{
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
-.col-1 a{
+.col-1 a {
   display: block;
   text-decoration: none;
   color: #efefef;
   margin-bottom: 10px;
 }
-form input{
+form input {
   width: 300px;
   height: 45px;
   border-radius: 4px;
@@ -71,7 +71,30 @@ form input{
   outline: none;
   border: none;
 }
-form button{
+
+.dark-input {
+  width: 300px;
+  height: 45px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  outline: none;
+  border: none;
+  
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+::placeholder {
+  color: #ddd;
+}
+
+form button {
   background: transparent;
   border: 2px solid #fff;
   border-radius: 30px;
@@ -80,14 +103,26 @@ form button{
   cursor: pointer;
   color: #efefef;
 }
-.social-icons{
+
+.dark-button {
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+.social-icons {
   margin-top: 30px;
 }
-.social-icons i{
+.social-icons i {
   font-size: 22px;
   margin: 10px;
   cursor: pointer;
 }
-#footermail{
+#footermail {
   color: #fff;
 }
