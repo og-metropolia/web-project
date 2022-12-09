@@ -1,11 +1,8 @@
 html,
 body {
-    height: 100%;
-}
-
-body {
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 .container img {
@@ -20,6 +17,7 @@ body {
 }
 
 .parent {
+    padding-top: 20px;
     display: flex;
 
 }
