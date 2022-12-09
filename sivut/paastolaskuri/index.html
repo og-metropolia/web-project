@@ -18,53 +18,55 @@
   </head>
 
   <body>
-      <div id="map-canvas">
-          <!-- <img src="../../img/" alt=""> -->
-    </div>
-    <div id="inputs">
-        <div class="flexbox">
+      <main>
+          <div id="map-canvas">
+              <!-- <img src="../../img/" alt=""> -->
+              </div>
+              <div id="inputs">
+            <div class="flexbox">
+                <input
+              type="text"
+              required
+              title="title"
+              placeholder="Lähtöpaikka"
+              id="source-address"
+              />
             <input
-          type="text"
-          required
-          title="title"
-          placeholder="Lähtöpaikka"
-          id="source-address"
-          />
-        <input
-          type="text"
-          required
-          title="title"
-          placeholder="Päämäärä"
-          id="destination-address"
-          />
-          <input
-          type="number"
-          required
-          title="title"
-          placeholder="Kuljetuksen paino (kg)"
-          id="package-weight"
-          />
-          <button type="button" id="search-button">Hae</button>
-          <ul id="output">
-      </ul>
-    </div>
-
-    <script>
-      function initAutocomplete() {
-        new google.maps.places.Autocomplete(
-          document.getElementById('source-address'),
-          { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
-        );
-        new google.maps.places.Autocomplete(
-          document.getElementById('destination-address'),
-          { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
-        );
-      }
-    </script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&libraries=places&callback=initAutocomplete"
-      async
-      defer
-    ></script>
+              type="text"
+              required
+              title="title"
+              placeholder="Päämäärä"
+              id="destination-address"
+              />
+              <input
+              type="number"
+              required
+              title="title"
+              placeholder="Kuljetuksen paino (kg)"
+              id="package-weight"
+              />
+              <button type="button" id="search-button">Hae</button>
+              <ul id="output">
+          </ul>
+              </div>
+          
+              <script>
+          function initAutocomplete() {
+            new google.maps.places.Autocomplete(
+              document.getElementById('source-address'),
+              { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+            );
+            new google.maps.places.Autocomplete(
+              document.getElementById('destination-address'),
+              { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+            );
+          }
+              </script>
+              <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&libraries=places&callback=initAutocomplete"
+          async
+          defer
+              ></script>
+      </main>
   </body>
 </html>
