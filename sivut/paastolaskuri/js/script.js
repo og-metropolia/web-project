@@ -1,3 +1,5 @@
+const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
+
 const btn = document.querySelector('#search-button');
 
 btn.addEventListener('click', async (event) => {
@@ -60,11 +62,12 @@ btn.addEventListener('click', async (event) => {
 });
 
 const getData = async (oLat, oLng, dLat, dLng) => {
-  const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
   const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${oLat}%2C${oLng}&destinations=${dLat}%2C${dLng}&key=${API_KEY}`;
-  const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
-    MAPS_URL
-  )}`;
+  console.log(`MAPS_URL: ${MAPS_URL}`);
+  const ENCODED_URL = encodeURIComponent(MAPS_URL);
+  console.log(`ENCODED_URL: ${ENCODED_URL}`);
+  const QUERY_URL = toCorsSave(ENCODED_URL);
+  console.log(`QUERY_URL: ${QUERY_URL}`);
 
   console.log(`url to use: ${QUERY_URL}`);
   const response = await fetch(QUERY_URL);
@@ -73,11 +76,11 @@ const getData = async (oLat, oLng, dLat, dLng) => {
 };
 
 function getDistance(data) {
-  return JSON.parse(data.contents).rows[0].elements[0].distance.value; // returns in meters
+  return data.rows[0].elements[0].distance.value; // returns in meters
 }
 
 function getDuration(data) {
-  return JSON.parse(data.contents).rows[0].elements[0].duration.value; // returns in seconds
+  return data.rows[0].elements[0].duration.value; // returns in seconds
 }
 
 function toPlusNotation(text) {
@@ -90,26 +93,25 @@ function calculateEmissions(distanceMeters, weightKilograms) {
 }
 
 const toCoords = async (address) => {
-  const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
   const MAPS_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${API_KEY}`;
-  const QUERY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(
-    MAPS_URL
-  )}`;
+  console.log(`MAPS_URL: ${MAPS_URL}`);
+  const ENCODED_URL = encodeURIComponent(MAPS_URL);
+  console.log(`ENCODED_URL: ${ENCODED_URL}`);
+  const QUERY_URL = toCorsSave(ENCODED_URL);
+  console.log(`QUERY_URL: ${QUERY_URL}`);
+
   const response = await fetch(QUERY_URL);
   const json = await response.json();
   return json;
 };
 
 function getCoords(json) {
-  let lat = JSON.parse(json.contents).results[0].geometry.location.lat;
-  let lng = JSON.parse(json.contents).results[0].geometry.location.lng;
+  let lat = json.results[0].geometry.location.lat;
+  let lng = json.results[0].geometry.location.lng;
   console.log(`lat: ${lat}`);
   console.log(`lng: ${lng}`);
 
-  return [
-    JSON.parse(json.contents).results[0].geometry.location.lat,
-    JSON.parse(json.contents).results[0].geometry.location.lng,
-  ];
+  return [lat, lng];
 }
 
 function validateCoords(lat, lon) {
@@ -226,4 +228,12 @@ function calculateAndDisplayRoute(
       }
     }
   );
+}
+
+function toCorsSave(url) {
+  // const PROXY_URL = 'https://api.allorigins.win/get?url=';
+  // const PROXY_URL = 'https://cors-proxy.htmldriven.com/?url=';
+  // const PROXY_URL = 'https://gobetween.oklabs.org/';
+  const PROXY_URL = 'https://users.metropolia.fi/~ilkkamtk/proxy.php?url=';
+  return PROXY_URL + url;
 }
