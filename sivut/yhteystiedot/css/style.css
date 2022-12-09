@@ -41,7 +41,6 @@ body {
 
 .teksti{
     color: black;
-    font-family: 'Titillium Web', sans-serif;
     padding-top: 150px;
     font-size: x-large;
     text-align: center;
@@ -49,7 +48,6 @@ body {
 }
 
 .teksti2{
-    font-family: 'Titillium Web', sans-serif;
     font-size: x-large;
     color: black;
     text-align: center;
