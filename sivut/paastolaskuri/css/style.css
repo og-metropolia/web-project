@@ -40,3 +40,26 @@ body {
 #search-button {
   width: 10em;
 }
+
+.parent {
+  padding-top: 20px;
+  display: flex;
+
+}
+
+#inputs {
+  width: 50%;
+}
+
+#map-canvas {
+  width: 100%;
+
+}
+
+#map-canvas img {
+  width: 80%;
+  height: 600px;
+  padding-left: 200px;
+
+}
+
