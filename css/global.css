@@ -2,6 +2,10 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
+main{
+  margin: 20px;
+}
+
 .nav ul {
   list-style-type: none;
   justify-content: space-between;
@@ -11,8 +15,6 @@
   padding: 20px;
   align-items: center;
 }
-
-
 
 .nav li a {
   font-family: 'Anton', sans-serif;
@@ -36,6 +38,7 @@
 
 .footer{
   padding: 10px 15%;
+  margin-top: 75px;
   background: #333;
   color: #efefef;
   display: flex;
