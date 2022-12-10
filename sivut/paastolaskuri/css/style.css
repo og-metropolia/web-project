@@ -44,7 +44,10 @@ body {
 
 #search-button {
   padding: 20px 30px;
-  margin: 16px 90px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  margin-left: 90px;
+  margin-right: 90px;
   font-size: 20px;
   cursor: pointer;
   display: flex;
