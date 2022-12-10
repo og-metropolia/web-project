@@ -24,16 +24,19 @@ body {
   top: 12em;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 50%;
 }
+
 #map-canvas {
-  max-height: 50em;
-  width: 75%;
   display: inline-block;
-  /* position: absolute; */
-  top: 12em;
-  right: 0;
-  bottom: 0;
+  height: 600px;
+  width: 80%;
+  margin-left: 250px;
+}
+
+#map-canvas img {
+  height: 100%;
+  width: 100%;
 }
 
 #search-button {
@@ -43,14 +46,4 @@ body {
 .parent {
   padding-top: 20px;
   display: flex;
-}
-
-#inputs {
-  width: 50%;
-}
-
-#map-canvas {
-  height: 600px;
-  width: 80%;
-  margin-left: 250px;
 }
