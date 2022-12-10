@@ -23,42 +23,44 @@
 
   <body>
     <main>
-      <div class="parent">
-      <div id="inputs">
-        <div class="flexbox">
-          <input
-            class="dark-input"
-            type="text"
-            required
-            title="title"
-            placeholder="Lähtöpaikka"
-            id="source-address"
-          />
-          <input
-            class="dark-input"
-            type="text"
-            required
-            title="title"
-            placeholder="Päämäärä"
-            id="destination-address"
-          />
-          <input
-            class="dark-input"
-            type="number"
-            required
-            title="title"
-            placeholder="Kuljetuksen paino (kg)"
-            id="package-weight"
-          />
-          <button type="button" class="dark-button" id="search-button">Hae</button>
-          <ul id="output"></ul>
+        <!-- <div class="parent"> -->
+          <div id="map-canvas">
+            <img src="../../img/maps.png" alt="Kuva" />
+          </div>
+        <div id="inputs">
+          <div class="flexbox">
+            <input
+              class="dark-input"
+              type="text"
+              required
+              title="title"
+              placeholder="Lähtöpaikka"
+              id="source-address"
+            />
+            <input
+              class="dark-input"
+              type="text"
+              required
+              title="title"
+              placeholder="Päämäärä"
+              id="destination-address"
+            />
+            <input
+              class="dark-input"
+              type="number"
+              required
+              title="title"
+              placeholder="Kuljetuksen paino (kg)"
+              id="package-weight"
+              />
+              <button type="button" class="dark-button" id="search-button">
+                  Hae
+                </button>
+                <ul id="output"></ul>
+            </div>
         </div>
-      </div>
-
-      <div id="map-canvas">
-        <img src="../../img/maps.png" alt="Kuva" />
-      </div>
-      </div>
+        
+      <!-- </div> -->
 
       <script>
         function initAutocomplete() {

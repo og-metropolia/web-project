@@ -42,6 +42,7 @@ btn.addEventListener('click', async (event) => {
     let distance = await getDistance(data);
     let duration = await getDuration(data);
 
+    
     drawMap(
       sourceAddressCoords[0],
       sourceAddressCoords[1],
@@ -172,13 +173,15 @@ function showValues(distance, duration, emissions) {
 }
 
 function drawMap(originLat, originLng, destLat, destLng) {
+  const mapCanvasElem = document.querySelector('#map-canvas');
+  
   var pointA = new google.maps.LatLng(originLat, originLng);
   var pointB = new google.maps.LatLng(destLat, destLng),
-    myOptions = {
-      zoom: 7,
+  myOptions = {
+    zoom: 7,
       center: pointA,
     },
-    map = new google.maps.Map(document.querySelector('#map-canvas'), myOptions),
+    map = new google.maps.Map(mapCanvasElem, myOptions),
     // Instantiate a directions service.
     directionsService = new google.maps.DirectionsService(),
     directionsDisplay = new google.maps.DirectionsRenderer({
@@ -196,15 +199,15 @@ function drawMap(originLat, originLng, destLat, destLng) {
       label: 'B',
       map: map,
     });
-
-  // get route from A to B
-  calculateAndDisplayRoute(
+    
+    // get route from A to B
+    calculateAndDisplayRoute(
     directionsService,
     directionsDisplay,
     pointA,
     pointB
-  );
-}
+    );
+  }
 
 function calculateAndDisplayRoute(
   directionsService,
