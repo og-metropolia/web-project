@@ -23,14 +23,13 @@
 
   <body>
     <main>
-      <!-- <div class="parent"> -->
       <div id="map-canvas">
         <img src="../../img/maps.png" alt="Kuva" />
       </div>
       <div id="inputs">
         <div class="flexbox">
           <input
-            class="dark-input"
+            class="input-field"
             type="text"
             required
             title="title"
@@ -38,7 +37,7 @@
             id="source-address"
           />
           <input
-            class="dark-input"
+            class="input-field"
             type="text"
             required
             title="title"
@@ -46,21 +45,19 @@
             id="destination-address"
           />
           <input
-            class="dark-input"
+            class="input-field"
             type="number"
             required
             title="title"
-            placeholder="Kuljetuksen paino (kg)"
+            placeholder="Paino (kg)"
             id="package-weight"
           />
-          <button type="button" class="dark-button" id="search-button">
-            Hae
-          </button>
-          <ul id="output"></ul>
+          <button type="button" id="search-button">Hae</button>
+          <ul id="output">
+            <li id="output-heading">Kuljetuksen tiedot</li>
+          </ul>
         </div>
       </div>
-
-      <!-- </div> -->
 
       <script>
         function initAutocomplete() {

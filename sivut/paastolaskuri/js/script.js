@@ -42,7 +42,6 @@ btn.addEventListener('click', async (event) => {
     let distance = await getDistance(data);
     let duration = await getDuration(data);
 
-    
     drawMap(
       sourceAddressCoords[0],
       sourceAddressCoords[1],
@@ -134,51 +133,49 @@ function toHours(seconds) {
 function showValues(distance, duration, emissions) {
   const outputList = document.querySelector('#output');
 
+  if (document.querySelector('#emission-output')) {
+    const emissionOutputElem = document.querySelector('#emission-output');
+    emissionOutputElem.innerHTML = `${emissions.toFixed(2)} kg CO₂e`;
+    outputList.appendChild(emissionOutputElem);
+  } else {
+    const emissionOutputElem = document.createElement('li');
+    emissionOutputElem.setAttribute('id', 'emission-output');
+    emissionOutputElem.innerHTML = `${emissions.toFixed(2)} kg CO₂e`;
+    outputList.appendChild(emissionOutputElem);
+  }
+
   if (document.querySelector('#distance-output')) {
     const distanceOutputElem = document.querySelector('#distance-output');
-    distanceOutputElem.innerHTML = `Matka: ${toKilometers(distance).toFixed(
-      2
-    )} km`;
+    distanceOutputElem.innerHTML = `${toKilometers(distance).toFixed(2)} km`;
     outputList.appendChild(distanceOutputElem);
   } else {
     const distanceOutputElem = document.createElement('li');
     distanceOutputElem.setAttribute('id', 'distance-output');
-    distanceOutputElem.innerHTML = `Matka: ${toKilometers(distance).toFixed(
-      2
-    )} km`;
+    distanceOutputElem.innerHTML = `${toKilometers(distance).toFixed(2)} km`;
     outputList.appendChild(distanceOutputElem);
   }
 
   if (document.querySelector('#duration-output')) {
     const durationOutputElem = document.querySelector('#duration-output');
-    durationOutputElem.innerHTML = `Kesto: ${toHours(duration).toFixed(2)} h`;
+    durationOutputElem.innerHTML = `${toHours(duration).toFixed(2)} h`;
     outputList.appendChild(durationOutputElem);
   } else {
     const durationOutputElem = document.createElement('li');
     durationOutputElem.setAttribute('id', 'duration-output');
-    durationOutputElem.innerHTML = `Kesto: ${toHours(duration).toFixed(2)} h`;
+    durationOutputElem.innerHTML = `${toHours(duration).toFixed(2)} h`;
     outputList.appendChild(durationOutputElem);
   }
 
-  if (document.querySelector('#emission-output')) {
-    const emissionOutputElem = document.querySelector('#emission-output');
-    emissionOutputElem.innerHTML = `Päästöt: ${emissions.toFixed(2)} kg CO₂e`;
-    outputList.appendChild(emissionOutputElem);
-  } else {
-    const emissionOutputElem = document.createElement('li');
-    emissionOutputElem.setAttribute('id', 'emission-output');
-    emissionOutputElem.innerHTML = `Päästöt: ${emissions.toFixed(2)} kg CO₂e`;
-    outputList.appendChild(emissionOutputElem);
-  }
+  outputList.style.visibility = 'visible';
 }
 
 function drawMap(originLat, originLng, destLat, destLng) {
   const mapCanvasElem = document.querySelector('#map-canvas');
-  
+
   var pointA = new google.maps.LatLng(originLat, originLng);
   var pointB = new google.maps.LatLng(destLat, destLng),
-  myOptions = {
-    zoom: 7,
+    myOptions = {
+      zoom: 7,
       center: pointA,
     },
     map = new google.maps.Map(mapCanvasElem, myOptions),
@@ -199,15 +196,15 @@ function drawMap(originLat, originLng, destLat, destLng) {
       label: 'B',
       map: map,
     });
-    
-    // get route from A to B
-    calculateAndDisplayRoute(
+
+  // get route from A to B
+  calculateAndDisplayRoute(
     directionsService,
     directionsDisplay,
     pointA,
     pointB
-    );
-  }
+  );
+}
 
 function calculateAndDisplayRoute(
   directionsService,

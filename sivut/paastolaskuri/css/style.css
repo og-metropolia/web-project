@@ -1,3 +1,5 @@
+@import url('../../../css/colors.css');
+
 html,
 body {
   height: 100%;
@@ -14,17 +16,44 @@ body {
 
 .flexbox > * {
   flex: 1 1 100%;
-  margin-bottom: 1em;
+  margin-bottom: 0;
   margin-left: 1em;
   height: 2em;
 }
 
 #inputs {
   position: absolute;
-  top: 12em;
+  top: 9.5em;
   left: 0;
   bottom: 0;
   width: 20%;
+}
+
+.input-field {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 2.5px;
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #333;
+  border: 3px solid var(--ogls-blue);
+  border-radius: 4px;
+}
+
+#search-button {
+  padding: 20px 30px;
+  margin: 16px 90px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  color: #fff;
+  background-color: var(--ogls-gray);
+  border: 3px solid var(--ogls-blue);
+  border-radius: 4px;
 }
 
 #map-canvas {
@@ -39,8 +68,23 @@ body {
   width: 100%;
 }
 
-#search-button {
-  /* width: 10em; */
+#output {
+  visibility: hidden;
+  list-style-type: none;
+}
+
+#output li {
+  background-color: var(--ogls-gray);
+  color: #fff;
+  padding: 0.5em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: -32px;
+  margin-right: 8px;
+  width: 200px;
+  text-align: center;
+  border: 3px solid var(--ogls-blue);
+  border-radius: 4px;
 }
 
 .parent {
