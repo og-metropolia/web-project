@@ -6,6 +6,8 @@ main {
   margin: 20px;
 }
 
+/* Navbar */
+
 .nav ul {
   list-style-type: none;
   justify-content: space-between;
@@ -25,7 +27,7 @@ main {
   text-decoration: none;
   font-size: x-large;
 }
-/* Change the link color to #111 (black) on hover */
+
 .nav li a:hover {
   text-decoration: underline;
 }
@@ -44,23 +46,28 @@ main {
   color: #efefef;
   display: flex;
 }
+
 .footer div {
   text-align: center;
 }
+
 .col-2 {
   flex-grow: 2;
 }
+
 .footer div h3 {
   font-weight: 300;
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
+
 .col-1 a {
   display: block;
   text-decoration: none;
   color: #efefef;
   margin-bottom: 10px;
 }
+
 form input {
   width: 300px;
   height: 45px;
@@ -81,7 +88,6 @@ form input {
   margin-bottom: 40px;
   outline: none;
   border: none;
-  
   display: inline-block;
   color: #fff;
   padding: 10px 20px;
@@ -115,14 +121,17 @@ form button {
   display: flex;
   align-items: center;
 }
+
 .social-icons {
   margin-top: 30px;
 }
+
 .social-icons i {
   font-size: 22px;
   margin: 10px;
   cursor: pointer;
 }
+
 #footermail {
   color: #fff;
 }
