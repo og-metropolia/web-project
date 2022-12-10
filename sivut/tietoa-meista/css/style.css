@@ -1,3 +1,5 @@
+@import url('../../../css/colors.css');
+
 body {
     margin: 0;
 }
@@ -10,7 +12,7 @@ body {
 .container{
     position: relative;
     text-align: center;
-    color: white;
+    color: #fff;
 }
 .teksti{
     color: black;

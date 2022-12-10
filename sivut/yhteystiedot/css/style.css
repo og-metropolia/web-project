@@ -1,83 +1,79 @@
+@import url('../../../css/colors.css');
+
 html,
 body {
-    padding: 0;
-    margin: 0;
-    height: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
 .container img {
-    object-fit: fill;
-    width: 100%;
-    height: 300px;
+  object-fit: fill;
+  width: 100%;
+  height: 300px;
 }
-.container{
-    position: relative;
-    text-align: center;
-    color: white;
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 .parent {
-    padding-top: 20px;
-    display: flex;
-
+  padding-top: 20px;
+  display: flex;
 }
 
 .parent2 {
-    display: flex;
+  display: flex;
 }
 
-.konttorikuva img{
-    width: 100%;
-
+.konttorikuva img {
+  width: 100%;
 }
 
 .konttorikuva {
-    width: 50%;
+  width: 50%;
 }
 
-
-.teksti{
-    color: black;
-    padding-top: 150px;
-    font-size: x-large;
-    text-align: center;
-    width: 50%;
+.teksti {
+  color: #000;
+  padding-top: 150px;
+  font-size: x-large;
+  text-align: center;
+  width: 50%;
 }
 
-.teksti2{
-    font-size: x-large;
-    color: black;
-    text-align: center;
-    width: 50%;
-    padding-top: 70px;
-
+.teksti2 {
+  font-size: x-large;
+  color: #000;
+  text-align: center;
+  width: 50%;
+  padding-top: 70px;
 }
 
 .clearfix {
-    overflow: auto;
+  overflow: auto;
 }
 
-.valiotsikko{
-    color: black;
-    font-family: 'Titillium Web', sans-serif;
-    padding-top: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-    font-size: large;
-    text-align: center;
-
-
+.valiotsikko {
+  color: #000;
+  font-family: 'Titillium Web', sans-serif;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: large;
+  text-align: center;
 }
 
-.otsikko{
-    font-family: 'Titillium Web', sans-serif;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: x-large;
-    padding-top: 100px;
-    color: #fff;
+.otsikko {
+  font-family: 'Titillium Web', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: x-large;
+  padding-top: 100px;
+  color: #fff;
 }
 
 /*
@@ -85,46 +81,46 @@ Ota yhteyttä form
  */
 
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 700px; /* Full width */
-    padding: 12px; /* Some padding */
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+input[type='text'],
+select,
+textarea {
+  width: 700px; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
-    background: transparent;
-    border: 2px solid #fff;
-    border-radius: 30px;
-    padding: 10px 30px;
-    font-size: 15px;
-    cursor: pointer;
-    color: #efefef;
+input[type='submit'] {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #efefef;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-    background-color: #38b6ff;
+input[type='submit']:hover {
+  background-color: var(--ogls-blue);
 }
-
-
 
 /* Add a background color and some padding around the form */
 .cont {
-    border-radius: 5px;
-    background-color: #333;
-    padding: 20px;
-    margin: auto;
-    width: 60%;
+  border-radius: 5px;
+  background-color: var(--ogls-gray);
+  padding: 20px;
+  margin: auto;
+  width: 60%;
 }
 
 #map {
-    width: 50%;
-    height: 500px;
-    padding-top: 50px;
+  width: 50%;
+  height: 500px;
+  padding-top: 50px;
 }
