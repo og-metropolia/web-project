@@ -11,27 +11,16 @@ btn.addEventListener('click', async (event) => {
   let destinationSearchInput = destinationSearchField.value;
   let packageWeightInput = packageWeightField.value;
 
-  console.log(`packageWeightInput: ${packageWeightInput} kilograms`);
-
   let sourceAddressPlus = toPlusNotation(sourceSearchInput);
-  console.log(`sourceAddressPlus: ${sourceAddressPlus}`);
   let destinationAddressPlus = toPlusNotation(destinationSearchInput);
-  console.log(`destinationAddressPlus: ${destinationAddressPlus}`);
 
   let sourceAddressCoordsJson = await toCoords(sourceAddressPlus);
-  console.log(`sourceAddressCoordsJson: ${sourceAddressCoordsJson}`);
   let destinationAddressCoordsJson = await toCoords(destinationAddressPlus);
-  console.log(`destinationAddressCoordsJson: ${destinationAddressCoordsJson}`);
 
   let destinationAddressCoords = getCoords(destinationAddressCoordsJson);
-  console.log(`destinationAddressCoords: ${destinationAddressCoords}`);
   let sourceAddressCoords = getCoords(sourceAddressCoordsJson);
-  console.log(`sourceAddressCoords: ${sourceAddressCoords}`);
 
   try {
-    console.log(
-      `Input coords: ${sourceAddressCoords[0]} | ${sourceAddressCoords[1]} | ${destinationAddressCoords[0]} | ${destinationAddressCoords[1]}`
-    );
     let data = await getData(
       sourceAddressCoords[0],
       sourceAddressCoords[1],
@@ -51,10 +40,6 @@ btn.addEventListener('click', async (event) => {
 
     let emissions = calculateEmissions(distance, packageWeightInput);
 
-    console.log(`distance: ${distance}`);
-    console.log(`duration: ${duration}`);
-    console.log(`emissions: ${emissions}`);
-
     showValues(distance, duration, emissions);
   } catch (error) {
     console.log(error.message);
@@ -63,13 +48,8 @@ btn.addEventListener('click', async (event) => {
 
 const getData = async (oLat, oLng, dLat, dLng) => {
   const MAPS_URL = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${oLat}%2C${oLng}&destinations=${dLat}%2C${dLng}&key=${API_KEY}`;
-  console.log(`MAPS_URL: ${MAPS_URL}`);
   const ENCODED_URL = encodeURIComponent(MAPS_URL);
-  console.log(`ENCODED_URL: ${ENCODED_URL}`);
   const QUERY_URL = toCorsSave(ENCODED_URL);
-  console.log(`QUERY_URL: ${QUERY_URL}`);
-
-  console.log(`url to use: ${QUERY_URL}`);
   const response = await fetch(QUERY_URL);
   const json = await response.json();
   return json;
@@ -94,12 +74,8 @@ function calculateEmissions(distanceMeters, weightKilograms) {
 
 const toCoords = async (address) => {
   const MAPS_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${API_KEY}`;
-  console.log(`MAPS_URL: ${MAPS_URL}`);
   const ENCODED_URL = encodeURIComponent(MAPS_URL);
-  console.log(`ENCODED_URL: ${ENCODED_URL}`);
   const QUERY_URL = toCorsSave(ENCODED_URL);
-  console.log(`QUERY_URL: ${QUERY_URL}`);
-
   const response = await fetch(QUERY_URL);
   const json = await response.json();
   return json;
@@ -108,18 +84,15 @@ const toCoords = async (address) => {
 function getCoords(json) {
   let lat = json.results[0].geometry.location.lat;
   let lng = json.results[0].geometry.location.lng;
-  console.log(`lat: ${lat}`);
-  console.log(`lng: ${lng}`);
-
   return [lat, lng];
 }
 
-function validateCoords(lat, lon) {
+function validateCoords(lat, lng) {
   const regexLat = /^(-?[1-8]?\d(?:\.\d{1,18})?|90(?:\.0{1,18})?)$/;
-  const regexLon = /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)$/;
+  const regexLng = /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)$/;
   let validLat = regexLat.test(lat);
-  let validLon = regexLon.test(lon);
-  return validLat && validLon;
+  let validLng = regexLng.test(lng);
+  return validLat && validLng;
 }
 
 function toKilometers(meters) {
@@ -171,50 +144,48 @@ function showValues(distance, duration, emissions) {
 function drawMap(originLat, originLng, destLat, destLng) {
   const mapCanvasElem = document.querySelector('#map-canvas');
 
-  var pointA = new google.maps.LatLng(originLat, originLng);
-  var pointB = new google.maps.LatLng(destLat, destLng),
+  var originPoint = new google.maps.LatLng(originLat, originLng);
+  var destPoint = new google.maps.LatLng(destLat, destLng),
     myOptions = {
       zoom: 7,
-      center: pointA,
+      center: originPoint,
     },
     map = new google.maps.Map(mapCanvasElem, myOptions),
-    // Instantiate a directions service.
     directionsService = new google.maps.DirectionsService(),
     directionsDisplay = new google.maps.DirectionsRenderer({
       map: map,
     }),
     markerA = new google.maps.Marker({
-      position: pointA,
-      title: 'point A',
+      position: originPoint,
+      title: 'lähtöpaikka',
       label: 'A',
       map: map,
     }),
     markerB = new google.maps.Marker({
-      position: pointB,
-      title: 'point B',
+      position: destPoint,
+      title: 'päämäärä',
       label: 'B',
       map: map,
     });
 
-  // get route from A to B
   calculateAndDisplayRoute(
     directionsService,
     directionsDisplay,
-    pointA,
-    pointB
+    originPoint,
+    destPoint
   );
 }
 
 function calculateAndDisplayRoute(
   directionsService,
   directionsDisplay,
-  pointA,
-  pointB
+  originPoint,
+  destPoint
 ) {
   directionsService.route(
     {
-      origin: pointA,
-      destination: pointB,
+      origin: originPoint,
+      destination: destPoint,
       avoidTolls: true,
       avoidHighways: false,
       travelMode: google.maps.TravelMode.DRIVING,
