@@ -45,7 +45,7 @@ main {
   padding: 10px 15%;
   margin-top: 75px;
   background: var(--ogls-gray);
-  color: #efefef;
+  color: #fff;
   display: flex;
 }
 
@@ -66,7 +66,7 @@ main {
 .col-1 a {
   display: block;
   text-decoration: none;
-  color: #efefef;
+  color: #fff;
   margin-bottom: 10px;
 }
 
@@ -81,10 +81,6 @@ form input {
   border: none;
 }
 
-::placeholder {
-  color: #ddd;
-}
-
 form button {
   background: transparent;
   border: 2px solid #fff;
@@ -92,7 +88,7 @@ form button {
   padding: 10px 30px;
   font-size: 15px;
   cursor: pointer;
-  color: #efefef;
+  color: #fff;
 }
 
 .social-icons {
