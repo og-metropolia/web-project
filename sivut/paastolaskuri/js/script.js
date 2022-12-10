@@ -130,41 +130,40 @@ function toHours(seconds) {
   return seconds / 3600;
 }
 
+function toCommaSep(number) {
+  return number.toString().replace('.', ',');
+}
+
 function showValues(distance, duration, emissions) {
   const outputList = document.querySelector('#output');
 
-  if (document.querySelector('#emission-output')) {
-    const emissionOutputElem = document.querySelector('#emission-output');
-    emissionOutputElem.innerHTML = `${emissions.toFixed(2)} kg CO₂e`;
-    outputList.appendChild(emissionOutputElem);
-  } else {
-    const emissionOutputElem = document.createElement('li');
-    emissionOutputElem.setAttribute('id', 'emission-output');
-    emissionOutputElem.innerHTML = `${emissions.toFixed(2)} kg CO₂e`;
-    outputList.appendChild(emissionOutputElem);
-  }
+  let emissionOutputElem;
+  document.querySelector('#emission-output')
+    ? (emissionOutputElem = document.querySelector('#emission-output'))
+    : (emissionOutputElem = document.createElement('li'));
+  emissionOutputElem.setAttribute('id', 'emission-output');
+  emissionOutputElem.innerHTML = `${toCommaSep(emissions.toFixed(2))} kg CO₂e`;
+  outputList.appendChild(emissionOutputElem);
 
-  if (document.querySelector('#distance-output')) {
-    const distanceOutputElem = document.querySelector('#distance-output');
-    distanceOutputElem.innerHTML = `${toKilometers(distance).toFixed(2)} km`;
-    outputList.appendChild(distanceOutputElem);
-  } else {
-    const distanceOutputElem = document.createElement('li');
-    distanceOutputElem.setAttribute('id', 'distance-output');
-    distanceOutputElem.innerHTML = `${toKilometers(distance).toFixed(2)} km`;
-    outputList.appendChild(distanceOutputElem);
-  }
+  let distanceOutputElem;
+  document.querySelector('#distance-output')
+    ? (distanceOutputElem = document.querySelector('#distance-output'))
+    : (distanceOutputElem = document.createElement('li'));
+  distanceOutputElem.setAttribute('id', 'distance-output');
+  distanceOutputElem.innerHTML = `${toCommaSep(
+    toKilometers(distance).toFixed(2)
+  )} km`;
+  outputList.appendChild(distanceOutputElem);
 
-  if (document.querySelector('#duration-output')) {
-    const durationOutputElem = document.querySelector('#duration-output');
-    durationOutputElem.innerHTML = `${toHours(duration).toFixed(2)} h`;
-    outputList.appendChild(durationOutputElem);
-  } else {
-    const durationOutputElem = document.createElement('li');
-    durationOutputElem.setAttribute('id', 'duration-output');
-    durationOutputElem.innerHTML = `${toHours(duration).toFixed(2)} h`;
-    outputList.appendChild(durationOutputElem);
-  }
+  let durationOutputElem;
+  document.querySelector('#duration-output')
+    ? (durationOutputElem = document.querySelector('#duration-output'))
+    : (durationOutputElem = document.createElement('li'));
+  durationOutputElem.setAttribute('id', 'duration-output');
+  durationOutputElem.innerHTML = `${toCommaSep(
+    toHours(duration).toFixed(2)
+  )} h`;
+  outputList.appendChild(durationOutputElem);
 
   outputList.style.visibility = 'visible';
 }
