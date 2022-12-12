@@ -43,6 +43,24 @@ main {
   padding-left: 20px;
 }
 
+/* Banner */
+.otsikko {
+  font-family: 'Titillium Web', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+  padding-top: 100px;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 /* Footer for every page */
 
 .footer {
