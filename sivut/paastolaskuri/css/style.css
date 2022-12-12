@@ -61,9 +61,9 @@ body {
 
 #map-canvas {
   display: inline-block;
-  height: 600px;
-  width: 80%;
-  margin-left: 250px;
+  height: 70vh;
+  width: 70vw;
+  /* margin-left: 250px; */
 }
 
 #map-canvas img {
