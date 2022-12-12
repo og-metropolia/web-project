@@ -102,6 +102,7 @@ form button {
   cursor: pointer;
 }
 
+.social-icons a,
 .social-icons a:visited {
   color: #000;
 }
