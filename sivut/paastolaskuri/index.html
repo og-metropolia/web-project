@@ -7,7 +7,7 @@
     <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../css/global.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript" src="../../js/global.js"></script>
+    <script type="text/javascript" src="../../js/navbar.js"></script>
     <script type="module" src="js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,10 +23,13 @@
 
   <body>
     <main>
-      <div class="parent">
+      <div id="map-canvas">
+        <img src="../../img/maps.png" alt="Kuva" />
+      </div>
       <div id="inputs">
         <div class="flexbox">
           <input
+            class="input-field"
             type="text"
             required
             title="title"
@@ -34,6 +37,7 @@
             id="source-address"
           />
           <input
+            class="input-field"
             type="text"
             required
             title="title"
@@ -41,20 +45,18 @@
             id="destination-address"
           />
           <input
+            class="input-field"
             type="number"
             required
             title="title"
-            placeholder="Kuljetuksen paino (kg)"
+            placeholder="Paino (kg)"
             id="package-weight"
           />
           <button type="button" id="search-button">Hae</button>
-          <ul id="output"></ul>
+          <ul id="output">
+            <li id="output-heading">Kuljetuksen tiedot</li>
+          </ul>
         </div>
-      </div>
-
-      <div id="map-canvas">
-        <img src="../../img/maps.png" alt="Kuva" />
-      </div>
       </div>
 
       <script>

@@ -21,9 +21,9 @@ document.write(`
         <p>ma-pe 7.30-19.00</p>
         <a id="footermail" href="mailto:info@oglogistic.fi">info@oglogistic.fi</a>
         <div class="social-icons">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
+        <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
         </div>
  
     </div>

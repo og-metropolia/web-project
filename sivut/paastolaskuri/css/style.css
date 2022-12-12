@@ -1,3 +1,5 @@
+@import url('../../../css/colors.css');
+
 html,
 body {
   height: 100%;
@@ -14,52 +16,81 @@ body {
 
 .flexbox > * {
   flex: 1 1 100%;
-  /* margin: 1em; */
-  margin-bottom: 1em;
+  margin-bottom: 0;
   margin-left: 1em;
   height: 2em;
 }
 
 #inputs {
   position: absolute;
-  top: 12em;
+  top: 9.5em;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 20%;
 }
-#map-canvas {
-  max-height: 50em;
-  width: 75%;
+
+.input-field {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 2.5px;
   display: inline-block;
-  /* position: absolute; */
-  top: 12em;
-  right: 0;
-  bottom: 0;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #333;
+  border: 3px solid var(--ogls-blue);
+  border-radius: 4px;
 }
 
 #search-button {
-  width: 10em;
+  padding: 20px 30px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  margin-left: 90px;
+  margin-right: 90px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  color: #fff;
+  background-color: var(--ogls-gray);
+  border: 3px solid var(--ogls-blue);
+  border-radius: 4px;
+}
+
+#map-canvas {
+  display: inline-block;
+  height: 600px;
+  width: 80%;
+  margin-left: 250px;
+}
+
+#map-canvas img {
+  height: 100%;
+  width: 100%;
+}
+
+#output {
+  visibility: hidden;
+  list-style-type: none;
+}
+
+#output li {
+  background-color: var(--ogls-gray);
+  color: #fff;
+  padding: 0.5em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: -32px;
+  margin-right: 8px;
+  width: 200px;
+  text-align: center;
+  border: 3px solid var(--ogls-blue);
+  border-radius: 4px;
 }
 
 .parent {
   padding-top: 20px;
   display: flex;
-
 }
-
-#inputs {
-  width: 50%;
-}
-
-#map-canvas {
-  width: 100%;
-
-}
-
-#map-canvas img {
-  width: 80%;
-  height: 600px;
-  padding-left: 200px;
-
-}
-

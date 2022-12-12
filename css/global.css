@@ -1,15 +1,19 @@
+@import url('./colors.css');
+
 * {
   font-family: 'Titillium Web', sans-serif;
 }
 
-main{
+main {
   margin: 20px;
 }
+
+/* Navbar */
 
 .nav ul {
   list-style-type: none;
   justify-content: space-between;
-  background-color: #333;
+  background-color: var(--ogls-gray);
   display: flex;
   margin: 0;
   padding: 20px;
@@ -19,15 +23,16 @@ main{
 
 .nav li a {
   font-family: 'Anton', sans-serif;
-  color: #38b6ff;
+  color: var(--ogls-blue);
   display: block;
   text-align: center;
   text-decoration: none;
   font-size: x-large;
 }
-/* Change the link color to #111 (black) on hover */
+
 .nav li a:hover {
   text-decoration: underline;
+  color: #fff;
 }
 
 #logo {
@@ -37,31 +42,36 @@ main{
 
 /* Footer for every page */
 
-.footer{
+.footer {
   padding: 10px 15%;
   margin-top: 75px;
-  background: #333;
-  color: #efefef;
+  background: var(--ogls-gray);
+  color: #fff;
   display: flex;
 }
-.footer div{
+
+.footer div {
   text-align: center;
 }
-.col-2{
+
+.col-2 {
   flex-grow: 2;
 }
+
 .footer div h3 {
   font-weight: 300;
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
-.col-1 a{
+
+.col-1 a {
   display: block;
   text-decoration: none;
-  color: #efefef;
+  color: #fff;
   margin-bottom: 10px;
 }
-form input{
+
+form input {
   width: 300px;
   height: 45px;
   border-radius: 4px;
@@ -71,23 +81,36 @@ form input{
   outline: none;
   border: none;
 }
-form button{
+
+form button {
   background: transparent;
   border: 2px solid #fff;
   border-radius: 30px;
   padding: 10px 30px;
   font-size: 15px;
   cursor: pointer;
-  color: #efefef;
+  color: #fff;
 }
-.social-icons{
+
+.social-icons {
   margin-top: 30px;
 }
-.social-icons i{
+
+.social-icons i {
   font-size: 22px;
   margin: 10px;
   cursor: pointer;
 }
-#footermail{
+
+.social-icons a,
+.social-icons a:visited {
+  color: #000;
+}
+
+.social-icons a:hover {
+  color: var(--ogls-blue);
+}
+
+#footermail {
   color: #fff;
 }
