@@ -63,7 +63,6 @@ main {
   position: absolute;
   top: 35%;
   left: 50%;
-  height: auto;
   transform: translate(-50%, -50%);
   font-size: large;
   padding-top: 100px;
