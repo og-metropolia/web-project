@@ -131,8 +131,8 @@ function showValues(distance, duration, emissions) {
 function drawMap(originLat, originLng, destLat, destLng) {
   const mapCanvasElem = document.querySelector('#map-canvas');
 
-  var originPoint = new google.maps.LatLng(originLat, originLng);
-  var destPoint = new google.maps.LatLng(destLat, destLng),
+  let originPoint = new google.maps.LatLng(originLat, originLng);
+  let destPoint = new google.maps.LatLng(destLat, destLng),
     myOptions = {
       zoom: 7,
       center: originPoint,
