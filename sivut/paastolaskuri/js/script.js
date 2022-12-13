@@ -218,18 +218,6 @@ function drawMap(originLat, originLng, destLat, destLng) {
     directionsService = new google.maps.DirectionsService(),
     directionsDisplay = new google.maps.DirectionsRenderer({
       map: map,
-    }),
-    markerA = new google.maps.Marker({
-      position: originPoint,
-      title: 'lähtöpaikka',
-      label: 'A',
-      map: map,
-    }),
-    markerB = new google.maps.Marker({
-      position: destPoint,
-      title: 'päämäärä',
-      label: 'B',
-      map: map,
     });
 
   calculateAndDisplayRoute(
@@ -238,6 +226,20 @@ function drawMap(originLat, originLng, destLat, destLng) {
     originPoint,
     destPoint
   );
+
+  const headquartersCoords = { lat: 60.22385, lng: 24.75863 };
+  let headquartersPosition = new google.maps.LatLng(
+    headquartersCoords.lat,
+    headquartersCoords.lng
+  );
+
+  headquartersMarker = new google.maps.Marker({
+    position: headquartersPosition,
+    title: 'OG Logistic Services',
+    label: 'OG',
+    map: map,
+  });
+  headquartersMarker.setMap(map);
 }
 
 function calculateAndDisplayRoute(
