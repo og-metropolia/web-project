@@ -102,7 +102,7 @@ main {
 }
 
 form input {
-  width: 300px;
+  width: 20vw;
   height: 45px;
   border-radius: 4px;
   text-align: center;
