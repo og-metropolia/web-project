@@ -10,7 +10,7 @@ body {
 .flexbox {
   display: flex;
   flex-wrap: wrap;
-  width: 10%;
+  width: 100%;
   margin-top: 1em;
 }
 
@@ -26,33 +26,36 @@ body {
   top: 22em;
   left: 0;
   bottom: 0;
-  width: 20%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 12.5vw;
 }
 
 .input-field {
+  width: 100%;
+  min-width: 65px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 2.5px;
   display: inline-block;
   color: #fff;
-  padding: 10px 20px;
   font-size: 20px;
-  background-color: #333;
+  background-color: var(--ogls-gray);
   border: 3px solid var(--ogls-blue);
   border-radius: 4px;
 }
 
 #search-button {
-  padding: 20px 30px;
-  margin-top: 16px;
-  margin-bottom: 32px;
-  margin-left: 90px;
-  margin-right: 90px;
+  width: 100%;
+  min-width: 75px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 50%;
+  margin-top: 1em;
   font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-top: 1em;
   color: #fff;
   background-color: var(--ogls-gray);
   border: 3px solid var(--ogls-blue);
@@ -63,7 +66,6 @@ body {
   display: inline-block;
   height: 70vh;
   width: 70vw;
-  /* margin-left: 250px; */
 }
 
 #map-canvas img {
@@ -72,22 +74,26 @@ body {
 }
 
 #output {
+  width: 12.5vw;
   visibility: hidden;
   list-style-type: none;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 
 #output li {
+  width: 100%;
   background-color: var(--ogls-gray);
   color: #fff;
   padding: 0.5em;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: -32px;
-  margin-right: 8px;
-  width: 200px;
+  /* margin-top: 8px;
+  margin-bottom: 8px; */
+  margin-left: -40px;
   text-align: center;
   border: 3px solid var(--ogls-blue);
   border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 2.5px;
 }
 
 .parent {
