@@ -9,7 +9,7 @@ document.write(`
     </div>
     <div class="col-2">
         <h3>Tilaa uutiskirje</h3>
-        <form>
+        <form id="footer-mailing-list">
             <input type="email" placeholder="Syötä sähköpostiosoitteesi" required>
             <br>
             <button type="submit">TILAA</button>
@@ -20,7 +20,7 @@ document.write(`
         <p>09 720 65200</p>
         <p>ma-pe 7.30-19.00</p>
         <a id="footer-email-address" href="mailto:info@oglogistic.fi">info@oglogistic.fi</a>
-        <div class="social-icons">
+        <div class="footer-social-icons">
         <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
         <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
         <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>

@@ -38,7 +38,7 @@ main {
   color: #fff;
 }
 
-#logo {
+#navbar-logo {
   height: 100px;
   padding-left: 20px;
 }
@@ -101,7 +101,7 @@ main {
   margin-bottom: 10px;
 }
 
-form input {
+#footer-mailing-list input {
   width: 20vw;
   height: 45px;
   border-radius: 4px;
@@ -112,7 +112,7 @@ form input {
   border: none;
 }
 
-form button {
+#footer-mailing-list button {
   background: transparent;
   border: 2px solid #fff;
   border-radius: 30px;
@@ -122,22 +122,22 @@ form button {
   color: #fff;
 }
 
-.social-icons {
+.footer-social-icons {
   margin-top: 30px;
 }
 
-.social-icons i {
+.footer-social-icons i {
   font-size: 22px;
   margin: 10px;
   cursor: pointer;
 }
 
-.social-icons a,
-.social-icons a:visited {
-  color: #000;
+.footer-social-icons a,
+.footer-social-icons a:visited {
+  color: #fff;
 }
 
-.social-icons a:hover {
+.footer-social-icons a:hover {
   color: var(--ogls-blue);
 }
 
