@@ -35,3 +35,12 @@ body {
     color: #fff;
 }
 
+.video video  {
+    width: 420px;
+    height: 240px;
+    padding-left: 410px;
+    padding-top: 50px;
+}
+
+
+
