@@ -108,45 +108,24 @@ function toCommaSep(number) {
 }
 
 function showValues(distance, duration, emissions) {
-  const parentElem = document.querySelector('#input-output');
+  let outputHeading = document.querySelector('#output-heading');
+  outputHeading.style.visibility = 'visible';
 
-  let outputHeading;
-  document.querySelector('#output-heading')
-    ? (outputHeading = document.querySelector('#output-heading'))
-    : (outputHeading = document.createElement('p'));
-  outputHeading.setAttribute('id', 'output-heading');
-  outputHeading.innerHTML = `Kuljetuksen tiedot`;
-  parentElem.appendChild(outputHeading);
+  let emissionOutputElem = document.querySelector('#emission-output');
+  emissionOutputElem.innerText = `${toCommaSep(emissions.toFixed(2))} kg CO₂e`;
+  emissionOutputElem.style.visibility = 'visible';
 
-  let emissionOutputElem;
-  document.querySelector('#emission-output')
-    ? (emissionOutputElem = document.querySelector('#emission-output'))
-    : (emissionOutputElem = document.createElement('p'));
-  emissionOutputElem.setAttribute('id', 'emission-output');
-  emissionOutputElem.innerHTML = `${toCommaSep(emissions.toFixed(2))} kg CO₂e`;
-  parentElem.appendChild(emissionOutputElem);
-
-  let distanceOutputElem;
-  document.querySelector('#distance-output')
-    ? (distanceOutputElem = document.querySelector('#distance-output'))
-    : (distanceOutputElem = document.createElement('p'));
-  distanceOutputElem.setAttribute('id', 'distance-output');
-  distanceOutputElem.innerHTML = `${toCommaSep(
+  let distanceOutputElem = document.querySelector('#distance-output');
+  distanceOutputElem.innerText = `${toCommaSep(
     toKilometers(distance).toFixed(2)
   )} km`;
-  parentElem.appendChild(distanceOutputElem);
+  distanceOutputElem.style.visibility = 'visible';
 
-  let durationOutputElem;
-  document.querySelector('#duration-output')
-    ? (durationOutputElem = document.querySelector('#duration-output'))
-    : (durationOutputElem = document.createElement('p'));
-  durationOutputElem.setAttribute('id', 'duration-output');
+  let durationOutputElem = document.querySelector('#duration-output');
   durationOutputElem.innerHTML = `${toCommaSep(
     toHours(duration).toFixed(2)
   )} h`;
-  parentElem.appendChild(durationOutputElem);
-
-  // parentElem.style.visibility = 'visible';
+  durationOutputElem.style.visibility = 'visible';
 }
 
 function drawMap(originLat, originLng, destLat, destLng) {
