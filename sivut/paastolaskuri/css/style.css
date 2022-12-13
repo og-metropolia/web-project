@@ -21,7 +21,7 @@ body {
   height: 2em;
 }
 
-#inputs {
+#input-output {
   position: absolute;
   top: 30em;
   left: 0;
@@ -31,7 +31,7 @@ body {
   width: 12.5vw;
 }
 
-.input-field {
+#input-output > * {
   width: 100%;
   min-width: 65px;
   text-align: center;
@@ -46,16 +46,19 @@ body {
 }
 
 #search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   min-width: 75px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-bottom: 50%;
+  margin-bottom: 20px;
   margin-top: 1em;
   font-size: 20px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  text-align: center;
   color: #fff;
   background-color: var(--ogls-gray);
   border: 3px solid var(--ogls-blue);
@@ -73,13 +76,13 @@ body {
   width: 100%;
 }
 
-#output {
+/* #output {
   width: 12.5vw;
   visibility: hidden;
   list-style-type: none;
   padding-left: 2.5%;
   padding-right: 2.5%;
-}
+} */
 
 #output li {
   width: 100%;

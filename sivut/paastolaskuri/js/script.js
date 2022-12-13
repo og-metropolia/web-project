@@ -108,37 +108,45 @@ function toCommaSep(number) {
 }
 
 function showValues(distance, duration, emissions) {
-  const outputList = document.querySelector('#output');
+  const parentElem = document.querySelector('#input-output');
+
+  let outputHeading;
+  document.querySelector('#output-heading')
+    ? (outputHeading = document.querySelector('#output-heading'))
+    : (outputHeading = document.createElement('p'));
+  outputHeading.setAttribute('id', 'output-heading');
+  outputHeading.innerHTML = `Kuljetuksen tiedot`;
+  parentElem.appendChild(outputHeading);
 
   let emissionOutputElem;
   document.querySelector('#emission-output')
     ? (emissionOutputElem = document.querySelector('#emission-output'))
-    : (emissionOutputElem = document.createElement('li'));
+    : (emissionOutputElem = document.createElement('p'));
   emissionOutputElem.setAttribute('id', 'emission-output');
   emissionOutputElem.innerHTML = `${toCommaSep(emissions.toFixed(2))} kg CO₂e`;
-  outputList.appendChild(emissionOutputElem);
+  parentElem.appendChild(emissionOutputElem);
 
   let distanceOutputElem;
   document.querySelector('#distance-output')
     ? (distanceOutputElem = document.querySelector('#distance-output'))
-    : (distanceOutputElem = document.createElement('li'));
+    : (distanceOutputElem = document.createElement('p'));
   distanceOutputElem.setAttribute('id', 'distance-output');
   distanceOutputElem.innerHTML = `${toCommaSep(
     toKilometers(distance).toFixed(2)
   )} km`;
-  outputList.appendChild(distanceOutputElem);
+  parentElem.appendChild(distanceOutputElem);
 
   let durationOutputElem;
   document.querySelector('#duration-output')
     ? (durationOutputElem = document.querySelector('#duration-output'))
-    : (durationOutputElem = document.createElement('li'));
+    : (durationOutputElem = document.createElement('p'));
   durationOutputElem.setAttribute('id', 'duration-output');
   durationOutputElem.innerHTML = `${toCommaSep(
     toHours(duration).toFixed(2)
   )} h`;
-  outputList.appendChild(durationOutputElem);
+  parentElem.appendChild(durationOutputElem);
 
-  outputList.style.visibility = 'visible';
+  // parentElem.style.visibility = 'visible';
 }
 
 function drawMap(originLat, originLng, destLat, destLng) {
