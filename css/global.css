@@ -141,6 +141,7 @@ form button {
   color: var(--ogls-blue);
 }
 
-#footermail {
+#footer-email-address {
+  text-decoration: none;
   color: #fff;
 }

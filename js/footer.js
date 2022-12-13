@@ -19,7 +19,7 @@ document.write(`
         <h3>Tilauskeskus</h3>
         <p>09 720 65200</p>
         <p>ma-pe 7.30-19.00</p>
-        <a id="footermail" href="mailto:info@oglogistic.fi">info@oglogistic.fi</a>
+        <a id="footer-email-address" href="mailto:info@oglogistic.fi">info@oglogistic.fi</a>
         <div class="social-icons">
         <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
         <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
