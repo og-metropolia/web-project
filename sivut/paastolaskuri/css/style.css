@@ -12,8 +12,8 @@ body {
   flex-wrap: wrap;
 
   position: absolute;
-  top: 30em;
-  left: 0;
+  top: 35em;
+  left: -3vw;
   bottom: 0;
 
   width: 12.5vw;
@@ -55,9 +55,8 @@ body {
 }
 
 #map-canvas {
-  display: inline-block;
   height: 70vh;
-  width: 70vw;
+  width: 100%;
 }
 
 #map-canvas img {
