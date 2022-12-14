@@ -57,6 +57,7 @@ body {
 #input-output > #search-button:hover {
   background-color: var(--ogls-blue);
   border: 3px solid var(--ogls-gray);
+  color: #000;
 }
 
 .output {
