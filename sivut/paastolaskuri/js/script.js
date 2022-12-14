@@ -4,8 +4,20 @@
 
 const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
 
-const btn = document.querySelector('#search-button');
+function initAutocomplete() {
+  new google.maps.places.Autocomplete(
+    document.getElementById('source-address'),
+    { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+  );
+  new google.maps.places.Autocomplete(
+    document.getElementById('destination-address'),
+    { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+  );
+}
 
+window.initAutocomplete = initAutocomplete;
+
+const btn = document.querySelector('#search-button');
 btn.addEventListener('click', async (event) => {
   const sourceSearchField = document.querySelector('#source-address');
   const destinationSearchField = document.querySelector('#destination-address');
@@ -243,6 +255,21 @@ function drawMap(originLat, originLng, destLat, destLng) {
   headquartersMarker.setIcon(
     'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
   );
+
+  const contentString =
+    '<h1 id="headquarters-marker-popup">OG Logistic Services</h1>' +
+    '<p>Päätoimipaikkamme Espoon Leppävaarassa.</p>';
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    ariaLabel: 'Uluru',
+  });
+
+  headquartersMarker.addListener('click', () => {
+    infowindow.open({
+      anchor: headquartersMarker,
+      map,
+    });
+  });
 
   headquartersMarker.setMap(map);
 }

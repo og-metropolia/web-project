@@ -31,7 +31,7 @@
     </div>
     <main>
       <div id="map-canvas">
-        <img src="../../img/map_placeholder.png" alt="Kuva" />
+        <img src="../../img/map_placeholder.jpg" alt="Kuva" />
       </div>
       <div id="input-output">
         <input
@@ -63,18 +63,6 @@
         <p id="duration-output" class="output"></p>
       </div>
 
-      <script>
-        function initAutocomplete() {
-          new google.maps.places.Autocomplete(
-            document.getElementById('source-address'),
-            { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
-          );
-          new google.maps.places.Autocomplete(
-            document.getElementById('destination-address'),
-            { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
-          );
-        }
-      </script>
       <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM&libraries=places&callback=initAutocomplete"
         async
