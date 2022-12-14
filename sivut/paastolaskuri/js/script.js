@@ -84,7 +84,7 @@ const getData = async (oLat, oLng, dLat, dLng) => {
  * @return {string} distance in meters
  */
 function getDistance(data) {
-  return data.rows[0].elements[0].distance.value; // returns in meters
+  return data.rows[0].elements[0].distance.value;
 }
 
 /**
