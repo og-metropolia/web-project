@@ -1,3 +1,7 @@
+/**
+ * @author Adrian G / @gashiAdrian
+ */
+
 document.write(`
 <script src="https://kit.fontawesome.com/d526bb85bd.js" crossorigin="anonymous"></script>
 <div class="footer">
