@@ -4,8 +4,20 @@
 
 const API_KEY = 'AIzaSyCLeW9dofrYcuHtUEYNpC2xydSTB9ud3zM';
 
-const btn = document.querySelector('#search-button');
+function initAutocomplete() {
+  new google.maps.places.Autocomplete(
+    document.getElementById('source-address'),
+    { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+  );
+  new google.maps.places.Autocomplete(
+    document.getElementById('destination-address'),
+    { types: ['(regions)'], componentRestrictions: { country: 'fi' } }
+  );
+}
 
+window.initAutocomplete = initAutocomplete;
+
+const btn = document.querySelector('#search-button');
 btn.addEventListener('click', async (event) => {
   const sourceSearchField = document.querySelector('#source-address');
   const destinationSearchField = document.querySelector('#destination-address');
