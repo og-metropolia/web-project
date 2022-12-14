@@ -65,7 +65,8 @@ Ota yhteyttä form
 /* Style inputs with type="text", select elements and textareas */
 input[type='text'],
 select,
-textarea {
+textarea,
+#submit-button {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
@@ -77,7 +78,7 @@ textarea {
 }
 
 /* Style the submit button with a specific background color etc */
-input[type='submit'] {
+#submit-button {
   background: transparent;
   border: 2px solid #fff;
   border-radius: 30px;
@@ -88,7 +89,7 @@ input[type='submit'] {
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type='submit']:hover {
+#submit-button:hover {
   background-color: var(--ogls-blue);
 }
 

@@ -18,3 +18,13 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+/* Shows a message when user sends contact request. */
+window.onload = function () {
+  const submitButton = document.querySelector('#submit-button');
+
+  submitButton.addEventListener('click', (event) => {
+    alert('Kiitos yhteydenotostasi!');
+    console.log('test');
+  });
+};
