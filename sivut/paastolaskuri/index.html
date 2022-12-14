@@ -22,41 +22,45 @@
   </head>
 
   <body>
+    <div class="banner">
+      <img src="../../img/meista.png" alt="kuvas" />
+
+      <div class="banner-heading">
+        <h1>Päästölaskuri</h1>
+      </div>
+    </div>
     <main>
       <div id="map-canvas">
         <img src="../../img/map_placeholder.png" alt="Kuva" />
       </div>
-      <div id="inputs">
-        <div class="flexbox">
-          <input
-            class="input-field"
-            type="text"
-            required
-            title="title"
-            placeholder="Lähtöpaikka"
-            id="source-address"
-          />
-          <input
-            class="input-field"
-            type="text"
-            required
-            title="title"
-            placeholder="Päämäärä"
-            id="destination-address"
-          />
-          <input
-            class="input-field"
-            type="number"
-            required
-            title="title"
-            placeholder="Paino (kg)"
-            id="package-weight"
-          />
-          <button type="button" id="search-button">Hae</button>
-          <ul id="output">
-            <li id="output-heading">Kuljetuksen tiedot</li>
-          </ul>
-        </div>
+      <div id="input-output">
+        <input
+          type="text"
+          required
+          title="title"
+          placeholder="Lähtöpaikka"
+          id="source-address"
+        />
+        <input
+          type="text"
+          required
+          title="title"
+          placeholder="Päämäärä"
+          id="destination-address"
+        />
+        <input
+          type="number"
+          required
+          title="title"
+          placeholder="Paino (kg)"
+          id="package-weight"
+        />
+        <button type="button" id="search-button">Hae</button>
+
+        <p id="output-heading" class="output">Kuljetuksen tiedot</p>
+        <p id="emission-output" class="output"></p>
+        <p id="distance-output" class="output"></p>
+        <p id="duration-output" class="output"></p>
       </div>
 
       <script>
