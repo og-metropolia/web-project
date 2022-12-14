@@ -94,6 +94,8 @@ textarea,
 /* When moving the mouse over the submit button, add a darker green color */
 #submit-button:hover {
   background-color: var(--ogls-blue);
+  border: 3px solid var(--ogls-blue);
+  color: #000;
 }
 
 /* Add a background color and some padding around the form */
