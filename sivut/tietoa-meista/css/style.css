@@ -21,5 +21,6 @@ body {
 .video {
   position: relative;
   top: 70px;
+  padding-bottom: 100px;
   left: 25%;
 }
