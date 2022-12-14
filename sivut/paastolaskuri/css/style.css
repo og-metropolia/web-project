@@ -65,6 +65,7 @@ body {
 }
 
 #map-canvas {
+  min-width: 200px;
   height: 70vh;
   width: 100%;
 }
