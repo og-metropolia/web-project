@@ -244,6 +244,21 @@ function drawMap(originLat, originLng, destLat, destLng) {
     'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
   );
 
+  const contentString =
+    '<h1 id="headquarters-marker-popup">OG Logistic Services</h1>' +
+    '<p>Päätoimipaikkamme Espoon Leppävaarassa.</p>';
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    ariaLabel: 'Uluru',
+  });
+
+  headquartersMarker.addListener('click', () => {
+    infowindow.open({
+      anchor: headquartersMarker,
+      map,
+    });
+  });
+
   headquartersMarker.setMap(map);
 }
 
