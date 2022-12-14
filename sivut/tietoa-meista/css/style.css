@@ -14,13 +14,14 @@ body {
   text-align: center;
 }
 
-.video video {
-  width: 50%;
+.video {
+  width: auto;
 }
 
-.video {
+.videocont {
   position: relative;
   top: 70px;
   padding-bottom: 100px;
-  left: 25%;
+  left: 35%;
+  width: 50%;
 }
