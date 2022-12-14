@@ -233,12 +233,17 @@ function drawMap(originLat, originLng, destLat, destLng) {
     headquartersCoords.lng
   );
 
-  headquartersMarker = new google.maps.Marker({
+  let headquartersMarker = new google.maps.Marker({
     position: headquartersPosition,
     title: 'OG Logistic Services',
-    label: 'OG',
+    label: '',
     map: map,
   });
+
+  headquartersMarker.setIcon(
+    'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+  );
+
   headquartersMarker.setMap(map);
 }
 
