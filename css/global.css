@@ -96,6 +96,7 @@ main {
 
 .footer-heading {
   letter-spacing: 1px;
+  color: var(--ogls-blue);
 }
 
 #footer-mailing-list input {

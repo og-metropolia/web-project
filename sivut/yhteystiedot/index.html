@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Yhteystiedot | OG Logistic Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Yamir H / @yamirh" />
     <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../css/global.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -59,14 +60,13 @@
 
       <div class="flexbox">
         <div class="cont">
-          <!--<form action="action_page.php">-->
-
           <label for="fname"></label><br />
           <input
             type="text"
             id="fname"
             name="firstname"
             placeholder="Etunimi"
+            title="Etunimi"
           />
 
           <label for="lname"></label><br />
@@ -75,6 +75,7 @@
             id="lname"
             name="lastname"
             placeholder="Sukunimi"
+            title="Sukunimi"
           />
 
           <label for="sposti"></label><br />
@@ -83,6 +84,7 @@
             id="sposti"
             name="lastname"
             placeholder="Sähköpostiosoite"
+            title="Sähköpostiosoite"
           />
 
           <label for="ytunnus"></label><br />
@@ -91,10 +93,11 @@
             id="ytunnus"
             name="yrityksentunnus"
             placeholder="Y-tunnus"
+            title="Y-tunnus"
           />
 
           <label for="country"></label><br />
-          <select id="country" name="country">
+          <select id="country" name="country" title="country">
             <option value="helsinki">Helsinki</option>
             <option value="espoo">Espoo</option>
             <option value="vantaa">Vantaa</option>
@@ -110,9 +113,7 @@
             placeholder="Kuljetustarpeesi"
             style="height: 100px"
           ></textarea>
-
-          <input type="submit" value="Lähetä" />
-          <!-- </form> -->
+          <button type="button" id="submit-button">Lähetä</button>
         </div>
       </div>
 

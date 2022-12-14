@@ -1,3 +1,8 @@
+/**
+ * @author Leo H / @4MBL
+ */
+
+// transforms logo path to a static url that can be used on any page
 let navbarLogoUrl = new URL('../../img/logo.png', document.baseURI).href;
 
 document.write(`

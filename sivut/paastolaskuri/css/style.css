@@ -1,3 +1,7 @@
+/*
+ * @author Leo H / @4MBL
+ */
+
 @import url('../../../css/colors.css');
 
 html,
@@ -48,6 +52,12 @@ body {
   justify-content: center;
   margin-bottom: 50px;
   cursor: pointer;
+}
+
+#input-output > #search-button:hover {
+  background-color: var(--ogls-blue);
+  border: 3px solid var(--ogls-gray);
+  color: #000;
 }
 
 .output {
