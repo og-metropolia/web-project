@@ -15,8 +15,11 @@ body {
 }
 
 .video video {
-  width: 420px;
-  height: 240px;
-  padding-left: 160px;
-  padding-top: 50px;
+  width: 50%;
+}
+
+.video {
+  position: relative;
+  top: 70px;
+  left: 25%;
 }
